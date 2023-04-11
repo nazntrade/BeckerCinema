@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Title & back-button -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/search_settings_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/onAllMovie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/search_settings_back_btn"
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="26dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/all_films_category_tv"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/graphic_bold"
+                android:gravity="center"
+                android:text="@string/search_settings_title"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_settings_actionbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Buttons all/films/series -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/search_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_26"
+                android:layout_marginTop="@dimen/dimen_16">
+
+                <TextView
+                    android:id="@+id/search_settings_label_show"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/graphic_regular"
+                    android:text="@string/search_settings_label_show"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/search_radio_group_film_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/search_settings_label_show">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/search_radio_all"
+                        android:layout_width="@dimen/dimen_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="-1dp"
+                        android:layout_weight="0.2"
+                        android:background="@drawable/radio_selector_left"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/search_settings_radio_all"
+                        android:textColor="@color/radio_text_colors"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/search_radio_films"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/radio_selector_center"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/search_settings_radio_films"
+                        android:textColor="@color/radio_text_colors"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/search_radio_series"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-1dp"
+                        android:layout_weight="0.2"
+                        android:background="@drawable/radio_selector_right"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/search_settings_radio_series"
+                        android:textColor="@color/radio_text_colors"
+                        android:textSize="14sp" />
+
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:divider="@drawable/separator_horizontal"
+                android:orientation="vertical"
+                android:showDividers="middle"
+                app:layout_constraintTop_toBottomOf="@id/search_radio_group">
+
+                <!-- Country -->
+                <FrameLayout
+                    android:id="@+id/country_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="26dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/graphic_regular"
+                        android:text="@string/search_settings_country_label"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/search_settings_country_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:textSize="14sp"
+                        tools:text="Канада" />
+
+                </FrameLayout>
+
+                <!-- Genre -->
+                <FrameLayout
+                    android:id="@+id/genre_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="26dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dimen_16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/graphic_regular"
+                        android:text="@string/search_settings_genre_label"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/search_settings_genre_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:textSize="14sp"
+                        tools:text="Комедия" />
+
+                </FrameLayout>
+
+                <!-- Year -->
+                <FrameLayout
+                    android:id="@+id/search_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="26dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dimen_16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/graphic_regular"
+                        android:text="@string/search_settings_year_label"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/search_settings_year_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="@string/_1998_2017"
+                        android:textSize="14sp" />
+
+                </FrameLayout>
+
+                <!-- Rating -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="@dimen/dimen_16">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="26dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/graphic_regular"
+                            android:text="@string/search_settings_rating_label"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/search_settings_rating_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:textSize="14sp"
+                            tools:text="любой" />
+
+                    </FrameLayout>
+
+                    <com.google.android.material.slider.RangeSlider
+                        android:id="@+id/search_settings_rating_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_26"
+                        android:autofillHints=""
+                        android:valueFrom="1"
+                        android:valueTo="10"
+                        app:labelBehavior="gone"
+                        app:values="@array/initial_slider_rating_values" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="35dp">
+
+                        <TextView
+                            android:id="@+id/search_settings_range_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:fontFamily="@font/graphic_regular"
+                            android:textSize="14sp"
+                            tools:text="1" />
+
+                        <TextView
+                            android:id="@+id/search_settings_range_end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:fontFamily="@font/graphic_regular"
+                            android:textSize="14sp"
+                            tools:text="10" />
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <!-- Sorting -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:paddingHorizontal="@dimen/dimen_26"
+                    android:paddingVertical="@dimen/dimen_16">
+
+                    <TextView
+                        android:id="@+id/search_settings_sorting_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/graphic_regular"
+                        android:text="@string/search_settings_sorting_label"
+                        android:textSize="12sp"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/search_radio_group_sorting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_16"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/search_settings_sorting_label">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/search_radio_sorting_date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="-1dp"
+                            android:layout_weight="0.2"
+                            android:background="@drawable/radio_selector_left"
+                            android:button="@null"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:text="@string/search_settings_radio_date"
+                            android:textColor="@color/radio_text_colors"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/search_radio_sorting_popular"
+                            android:layout_width="@dimen/dimen_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:background="@drawable/radio_selector_center"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="@string/search_settings_radio_popular"
+                            android:textColor="@color/radio_text_colors"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/search_radio_sorting_rating"
+                            android:layout_width="@dimen/dimen_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="-1dp"
+                            android:layout_weight="0.2"
+                            android:background="@drawable/radio_selector_right"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="@string/search_settings_radio_rating"
+                            android:textColor="@color/radio_text_colors"
+                            android:textSize="14sp" />
+
+                    </RadioGroup>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- isViewed -->
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkbox_is_watched"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginTop="@dimen/dimen_24"
+                    android:button="@drawable/search_settings_checkbox_selector"
+                    android:paddingHorizontal="36dp"
+                    android:text="@string/marked_watched"
+                    android:textSize="16sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/dimen_24"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/search_settings_apply_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginStart="@dimen/dimen_40"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        android:backgroundTint="@color/purple_700"
+                        android:textColor="@color/white"
+                        android:shadowColor="@color/black"
+                        android:layout_marginBottom="@dimen/dimen_2"
+                        android:background="@drawable/bg_round_corner"
+                        android:text="@string/apply"
+                        android:paddingStart="@dimen/dimen_16"
+                        android:paddingEnd="@dimen/dimen_16"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/reset_settings_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_32"
+                        android:backgroundTint="@color/purple_700"
+                        android:textColor="@color/white"
+                        android:shadowColor="@color/black"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        android:layout_marginEnd="@dimen/dimen_40"
+                        android:layout_marginBottom="@dimen/dimen_2"
+                        android:background="@drawable/bg_round_corner"
+                        android:paddingStart="@dimen/dimen_16"
+                        android:paddingEnd="@dimen/dimen_16"
+                        android:text="@string/reset"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

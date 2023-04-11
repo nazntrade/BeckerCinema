@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Category name & back-button -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/search_filters_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/onAllMovie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/search_filters_back_btn"
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="@dimen/dimen_26"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/search_filters_category_tv"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/graphic_bold"
+                android:gravity="center"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Страна" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Search field -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_filters_view"
+        style="@style/SearchViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/search_bar_background"
+        android:singleLine="true"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_filters_actionbar"
+        app:queryHint="@string/search_filters_country_choose" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_filters_list"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:scrollIndicators="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_filters_view"
+        tools:listitem="@layout/item_search_filters" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

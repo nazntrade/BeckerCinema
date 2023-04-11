@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/logo_app_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_26"
+        android:layout_marginTop="@dimen/dimen_70"
+        android:autoSizeMaxTextSize="24sp"
+        android:autoSizeMinTextSize="24sp"
+        android:text="@string/app_name"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guideline6" />
+
+    <TextView
+        android:id="@+id/btn_onboarding_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_26"
+        android:elevation="1dp"
+        android:text="@string/onboarding_btn_skip"
+        app:layout_constraintBottom_toBottomOf="@id/guideline6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+    <!--    ViewPager2-->
+    <!--    https://developer.android.com/reference/androidx/viewpager2/widget/ViewPager2-->
+    <!--    https://go.skillbox.ru/education/course/android-dev-1/bf29e0a9-bd4e-4e07-bf34-62f468131ac0/videolesson-->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/onboarding_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="@dimen/dimen_60"
+        android:layout_height="15dp"
+        android:layout_marginStart="@dimen/dimen_26"
+        android:layout_marginEnd="@dimen/dimen_26"
+        android:layout_marginBottom="@dimen/dimen_32"
+        android:contentDescription="@string/tabsDescriptions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabBackground="@drawable/onboard_dot_default"
+        app:tabIndicator="@drawable/onboard_dot_selected"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorHeight="@dimen/dimen_16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="146dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="90dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
