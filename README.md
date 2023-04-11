@@ -23,7 +23,12 @@ The data source is [Kinopoisk Api Unofficial](https://kinopoiskapiunofficial.tec
 - Animation
 - Hilt
 
-![homePhoto](https://user-images.githubusercontent.com/82381371/231047217-88fa5db5-2bde-4712-b5ca-c937622b0ca6.jpg)
+<p float="left">
+![onboarding](https://user-images.githubusercontent.com/82381371/231047489-a6a647c1-7030-42ef-a0b6-a38bc5d877ba.gif) width=20% height=20%>
+![homeScreen](https://user-images.githubusercontent.com/82381371/231047552-69510b2d-2607-4259-be43-ba7570968e02.gif) width=20% height=20%>
+![searchScreen](https://user-images.githubusercontent.com/82381371/231047564-0dcc5baa-44bf-48a6-a09e-29ceb73dd945.gif) width=20% height=20%>
+</p>
+
 ![onboarding](https://user-images.githubusercontent.com/82381371/231047489-a6a647c1-7030-42ef-a0b6-a38bc5d877ba.gif)
 ![homeScreen](https://user-images.githubusercontent.com/82381371/231047552-69510b2d-2607-4259-be43-ba7570968e02.gif)
 ![searchScreen](https://user-images.githubusercontent.com/82381371/231047564-0dcc5baa-44bf-48a6-a09e-29ceb73dd945.gif)
