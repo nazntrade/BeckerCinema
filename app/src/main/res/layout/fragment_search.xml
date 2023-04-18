@@ -18,7 +18,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/search_my_field"
-            android:layout_width="@dimen/dimen_0"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/search_input_field"
             android:drawableStart="@drawable/ic_search"
@@ -28,18 +28,8 @@
             android:paddingHorizontal="18dp"
             android:singleLine="true"
             android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@id/search_filter_btn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dimen_4"
-            android:src="@drawable/ic_vertical_line"
-            app:layout_constraintBottom_toBottomOf="@id/search_my_field"
-            app:layout_constraintEnd_toStartOf="@id/search_filter_btn"
-            app:layout_constraintTop_toTopOf="@id/search_my_field" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/search_filter_btn"
@@ -106,7 +96,7 @@
     <!-- FilmList -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_film_list"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_0"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -117,7 +107,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_people_list"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_0"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
