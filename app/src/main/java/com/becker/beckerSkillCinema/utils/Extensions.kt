@@ -6,7 +6,7 @@ import android.widget.ImageView
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.data.filmGallery.ItemImageGallery
 import com.becker.beckerSkillCinema.data.similarFilm.SimilarItem
-import com.becker.beckerSkillCinema.entity.HomeItem
+import com.becker.beckerSkillCinema.data.entitys.HomeItem
 import com.becker.beckerSkillCinema.presentation.search.datepicker.Date
 import com.becker.beckerSkillCinema.presentation.search.datepicker.Draw
 import com.becker.beckerSkillCinema.presentation.search.datepicker.SettingsPicker

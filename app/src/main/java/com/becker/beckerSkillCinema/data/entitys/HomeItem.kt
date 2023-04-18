@@ -1,4 +1,4 @@
-package com.becker.beckerSkillCinema.entity
+package com.becker.beckerSkillCinema.data.entitys
 
 import com.becker.beckerSkillCinema.data.filmByFilter.Genre
 

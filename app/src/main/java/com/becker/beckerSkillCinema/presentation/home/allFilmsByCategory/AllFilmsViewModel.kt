@@ -9,7 +9,7 @@ import androidx.paging.cachedIn
 import com.becker.beckerSkillCinema.data.*
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.domain.*
-import com.becker.beckerSkillCinema.entity.HomeItem
+import com.becker.beckerSkillCinema.data.entitys.HomeItem
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.currentMonth
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.currentYear
 import com.becker.beckerSkillCinema.presentation.home.allFilmsByCategory.allFilmAdapters.AllFilmPagingSource

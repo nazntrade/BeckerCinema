@@ -6,6 +6,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.data.GalleryTypes
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.data.ParamsFilterGallery
@@ -18,7 +19,7 @@ import com.becker.beckerSkillCinema.data.staffByFilmId.ResponseStaffByFilmId
 import com.becker.beckerSkillCinema.domain.*
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import com.becker.beckerSkillCinema.presentation.filmDetail.gallery.recyclerAdapter.GalleryFullPagingSource
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams.GALLERY_TYPES
+import com.becker.beckerSkillCinema.utils.MyStrings
 import com.becker.beckerSkillCinema.utils.toLimitImages
 import com.becker.beckerSkillCinema.utils.toLimitSimilarFilm
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -226,4 +227,18 @@ class FilmDetailViewModel @Inject constructor(
             }
         }
     }
+
+    companion object {
+         val GALLERY_TYPES = mapOf(
+             GalleryTypes.STILL.name to MyStrings.get(R.string.steel),
+             GalleryTypes.SHOOTING.name to MyStrings.get(R.string.shooting),
+             GalleryTypes.POSTER.name to MyStrings.get(R.string.poster),
+             GalleryTypes.FAN_ART.name to MyStrings.get(R.string.fan_art),
+             GalleryTypes.PROMO.name to MyStrings.get(R.string.promo),
+             GalleryTypes.CONCEPT.name to MyStrings.get(R.string.concept),
+             GalleryTypes.WALLPAPER.name to MyStrings.get(R.string.wallpaper),
+             GalleryTypes.COVER.name to MyStrings.get(R.string.cover),
+             GalleryTypes.SCREENSHOT.name to MyStrings.get(R.string.screenshot)
+         )
+     }
 }

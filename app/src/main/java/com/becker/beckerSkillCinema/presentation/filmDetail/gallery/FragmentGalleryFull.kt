@@ -18,8 +18,8 @@ import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.databinding.FragmentFilmGalleryScreenBinding
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.filmDetail.FilmDetailViewModel
+import com.becker.beckerSkillCinema.presentation.filmDetail.FilmDetailViewModel.Companion.GALLERY_TYPES
 import com.becker.beckerSkillCinema.presentation.filmDetail.gallery.recyclerAdapter.GalleryFullAdapter
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams.GALLERY_TYPES
 import com.becker.beckerSkillCinema.utils.autoCleared
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup

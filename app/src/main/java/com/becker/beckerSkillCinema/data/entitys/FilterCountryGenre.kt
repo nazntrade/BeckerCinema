@@ -1,4 +1,4 @@
-package com.becker.beckerSkillCinema.entity
+package com.becker.beckerSkillCinema.data.entitys
 
 interface FilterCountryGenre {
     val id: Int

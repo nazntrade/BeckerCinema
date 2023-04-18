@@ -14,10 +14,10 @@ import com.becker.beckerSkillCinema.data.personFromSearch.PeopleFromSearch
 import com.becker.beckerSkillCinema.domain.GetFilmListUseCase
 import com.becker.beckerSkillCinema.domain.GetGenresCountriesUseCase
 import com.becker.beckerSkillCinema.domain.GetPeopleFromSearchUseCase
-import com.becker.beckerSkillCinema.entity.HomeItem
+import com.becker.beckerSkillCinema.data.entitys.HomeItem
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import com.becker.beckerSkillCinema.presentation.home.allFilmsByCategory.allFilmAdapters.FilmsByFilterPagingSource
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams
+import com.becker.beckerSkillCinema.presentation.search.SearchFragment.Companion.TYPE_FILM
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -39,7 +39,7 @@ class SearchViewModel @Inject constructor(
     private var filters =
         ParamsFilterFilm(order = SearchSettingsFragment.Companion.Order.NUM_VOTE.text)
 
-    private var searchType = ConstantsAndParams.TYPE_FILM
+    private var searchType = TYPE_FILM
 
     private val _isFilterChanged = MutableStateFlow(false)
     val isFilterChanged = _isFilterChanged.asStateFlow()

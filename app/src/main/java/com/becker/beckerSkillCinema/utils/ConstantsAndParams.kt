@@ -1,6 +1,5 @@
 package com.becker.beckerSkillCinema.utils
 
-import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.data.*
 
 object ConstantsAndParams {
@@ -27,9 +26,6 @@ object ConstantsAndParams {
     const val KINOPOISKACCESSRIGHT16 = "310f1d28-9363-42cf-be67-94a3ea2424ca"
     const val KINOPOISKACCESSRIGHT17 = "130f6e6d-9e90-4c52-8cf5-8c4cda072fa8"
 
-    val TYPE_FILM = SearchParamsPeopleOrFilm.FILM
-    val TYPE_PEOPLE = SearchParamsPeopleOrFilm.PEOPLE
-
     val TOP_TYPES = mapOf(
         CategoriesFilms.BIOGRAPHY to TopTypesForApiQuery.FILM.name,
         CategoriesFilms.SCIENCE_FICTION to TopTypesForApiQuery.FILM.name,
@@ -38,42 +34,5 @@ object ConstantsAndParams {
         CategoriesFilms.POPULAR_100 to TopTypesForApiQuery.TOP_100_POPULAR_FILMS.name,
         CategoriesFilms.MOST_AWAIT to TopTypesForApiQuery.TOP_AWAIT_FILMS.name,
         CategoriesFilms.TV_SERIES to TopTypesForApiQuery.TV_SERIES.name
-    )
-
-    val GENRE_BIOGRAPHY_FILTER = mapOf(
-        GenreFilter.GENRE_BIOGRAPHY.code to TOP_TYPES.getValue(CategoriesFilms.BIOGRAPHY)
-    )
-    val GENRE_SCIENCE_FICTION_FILTER = mapOf(
-        GenreFilter.GENRE_SCIENCE_FICTION.code to TOP_TYPES.getValue(CategoriesFilms.SCIENCE_FICTION)
-    )
-    val GENRE_CARTOONS_FILTER = mapOf(
-        GenreFilter.GENRE_CARTOONS.code to TOP_TYPES.getValue(CategoriesFilms.CARTOONS)
-    )
-
-    val PROFESSIONS = mapOf(
-        Professions.WRITER.name to MyStrings.get(R.string.writer),
-        Professions.OPERATOR.name to MyStrings.get(R.string.operator),
-        Professions.EDITOR.name to MyStrings.get(R.string.editor),
-        Professions.COMPOSER.name to MyStrings.get(R.string.composer),
-        Professions.PRODUCER_USSR.name to MyStrings.get(R.string.producer_ussr),
-        Professions.TRANSLATOR.name to MyStrings.get(R.string.translator),
-        Professions.DIRECTOR.name to MyStrings.get(R.string.director),
-        Professions.DESIGN.name to MyStrings.get(R.string.design),
-        Professions.PRODUCER.name to MyStrings.get(R.string.producer),
-        Professions.ACTOR.name to MyStrings.get(R.string.actor),
-        Professions.VOICE_DIRECTOR.name to MyStrings.get(R.string.voice_director),
-        Professions.UNKNOWN.name to MyStrings.get(R.string.unknown)
-    )
-
-    val GALLERY_TYPES = mapOf(
-        GalleryTypes.STILL.name to MyStrings.get(R.string.steel),
-        GalleryTypes.SHOOTING.name to MyStrings.get(R.string.shooting),
-        GalleryTypes.POSTER.name to MyStrings.get(R.string.poster),
-        GalleryTypes.FAN_ART.name to MyStrings.get(R.string.fan_art),
-        GalleryTypes.PROMO.name to MyStrings.get(R.string.promo),
-        GalleryTypes.CONCEPT.name to MyStrings.get(R.string.concept),
-        GalleryTypes.WALLPAPER.name to MyStrings.get(R.string.wallpaper),
-        GalleryTypes.COVER.name to MyStrings.get(R.string.cover),
-        GalleryTypes.SCREENSHOT.name to MyStrings.get(R.string.screenshot)
     )
 }

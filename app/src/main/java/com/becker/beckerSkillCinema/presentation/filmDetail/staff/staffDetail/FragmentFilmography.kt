@@ -13,11 +13,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.becker.beckerSkillCinema.R
+import com.becker.beckerSkillCinema.data.Professions
 import com.becker.beckerSkillCinema.data.staffById.StaffsFilms
 import com.becker.beckerSkillCinema.databinding.FragmentStaffFilmographyBinding
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.filmDetail.staff.staffDetail.adapter.FilmographyAdapter
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams.PROFESSIONS
+import com.becker.beckerSkillCinema.utils.MyStrings
 import com.becker.beckerSkillCinema.utils.autoCleared
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
@@ -136,6 +138,21 @@ class FragmentFilmography : ViewBindingFragment<FragmentStaffFilmographyBinding>
                 intArrayOf()
             ),
             intArrayOf(Color.RED, Color.BLACK)
+        )
+
+        val PROFESSIONS = mapOf(
+            Professions.WRITER.name to MyStrings.get(R.string.writer),
+            Professions.OPERATOR.name to MyStrings.get(R.string.operator),
+            Professions.EDITOR.name to MyStrings.get(R.string.editor),
+            Professions.COMPOSER.name to MyStrings.get(R.string.composer),
+            Professions.PRODUCER_USSR.name to MyStrings.get(R.string.producer_ussr),
+            Professions.TRANSLATOR.name to MyStrings.get(R.string.translator),
+            Professions.DIRECTOR.name to MyStrings.get(R.string.director),
+            Professions.DESIGN.name to MyStrings.get(R.string.design),
+            Professions.PRODUCER.name to MyStrings.get(R.string.producer),
+            Professions.ACTOR.name to MyStrings.get(R.string.actor),
+            Professions.VOICE_DIRECTOR.name to MyStrings.get(R.string.voice_director),
+            Professions.UNKNOWN.name to MyStrings.get(R.string.unknown)
         )
     }
 }

@@ -1,7 +1,7 @@
 package com.becker.beckerSkillCinema.data.home
 
 import com.becker.beckerSkillCinema.data.CategoriesFilms
-import com.becker.beckerSkillCinema.entity.HomeItem
+import com.becker.beckerSkillCinema.data.entitys.HomeItem
 
 data class HomeList(
     val category: CategoriesFilms,

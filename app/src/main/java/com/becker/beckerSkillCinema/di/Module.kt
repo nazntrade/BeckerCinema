@@ -1,4 +1,4 @@
-package com.becker.beckerSkillCinema.data.di
+package com.becker.beckerSkillCinema.di
 
 import android.app.Application
 import androidx.room.Room

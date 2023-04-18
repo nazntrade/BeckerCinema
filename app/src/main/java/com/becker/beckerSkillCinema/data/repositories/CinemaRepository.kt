@@ -7,7 +7,7 @@ import com.becker.beckerSkillCinema.data.filmByFilter.ResponseByFilter
 import com.becker.beckerSkillCinema.data.filmByFilter.ResponseGenresCountries
 import com.becker.beckerSkillCinema.data.filmsPremier.FilmPremier
 import com.becker.beckerSkillCinema.data.network.Networking
-import com.becker.beckerSkillCinema.entity.HomeItem
+import com.becker.beckerSkillCinema.data.entitys.HomeItem
 import javax.inject.Inject
 
 class CinemaRepository @Inject constructor() {
