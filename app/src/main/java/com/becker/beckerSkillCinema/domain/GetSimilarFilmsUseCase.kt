@@ -1,7 +1,7 @@
 package com.becker.beckerSkillCinema.domain
 
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
-import com.becker.beckerSkillCinema.data.similarFilm.ResponseSimilarFilms
+import com.becker.beckerSkillCinema.data.entities.similarFilm.ResponseSimilarFilms
 import javax.inject.Inject
 
 class GetSimilarFilmsUseCase @Inject constructor(private val repository: CinemaRepository) {

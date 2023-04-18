@@ -2,8 +2,8 @@ package com.becker.beckerSkillCinema.domain
 
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
-import com.becker.beckerSkillCinema.data.filmByFilter.FilmByFilter
-import com.becker.beckerSkillCinema.data.filmByFilter.ResponseByFilter
+import com.becker.beckerSkillCinema.data.entities.filmByFilter.FilmByFilter
+import com.becker.beckerSkillCinema.data.entities.filmByFilter.ResponseByFilter
 import javax.inject.Inject
 
 class GetFilmListUseCase @Inject constructor(private val repository: CinemaRepository) {

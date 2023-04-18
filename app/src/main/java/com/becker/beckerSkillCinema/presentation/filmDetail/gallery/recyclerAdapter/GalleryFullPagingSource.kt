@@ -3,7 +3,7 @@ package com.becker.beckerSkillCinema.presentation.filmDetail.gallery.recyclerAda
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.becker.beckerSkillCinema.data.ParamsFilterGallery
-import com.becker.beckerSkillCinema.data.filmGallery.ItemImageGallery
+import com.becker.beckerSkillCinema.data.entities.filmGallery.ItemImageGallery
 import com.becker.beckerSkillCinema.domain.GetGalleryByIdUseCase
 
 class GalleryFullPagingSource(

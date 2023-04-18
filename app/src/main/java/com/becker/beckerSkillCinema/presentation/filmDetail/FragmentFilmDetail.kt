@@ -19,8 +19,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.data.CategoriesFilms
 import com.becker.beckerSkillCinema.data.Professions
-import com.becker.beckerSkillCinema.data.filmById.ResponseCurrentFilm
-import com.becker.beckerSkillCinema.data.staffByFilmId.ResponseStaffByFilmId
+import com.becker.beckerSkillCinema.data.entities.filmById.ResponseCurrentFilm
+import com.becker.beckerSkillCinema.data.entities.staffByFilmId.ResponseStaffByFilmId
 import com.becker.beckerSkillCinema.databinding.FragmentFilmDetailBinding
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment

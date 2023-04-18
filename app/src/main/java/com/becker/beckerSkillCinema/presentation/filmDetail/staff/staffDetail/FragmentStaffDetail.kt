@@ -14,7 +14,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.databinding.FragmentStaffDetailBinding
-import com.becker.beckerSkillCinema.data.entitys.HomeItem
+import com.becker.beckerSkillCinema.data.entities.HomeItem
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.home.homeAdapters.filmAdapter.FilmAdapter

@@ -6,7 +6,7 @@ import com.becker.beckerSkillCinema.data.*
 import com.becker.beckerSkillCinema.domain.GetFilmListUseCase
 import com.becker.beckerSkillCinema.domain.GetPremierFilmUseCase
 import com.becker.beckerSkillCinema.domain.GetTopFilmsUseCase
-import com.becker.beckerSkillCinema.data.entitys.HomeItem
+import com.becker.beckerSkillCinema.data.entities.HomeItem
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.GENRE_BIOGRAPHY_FILTER
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.GENRE_CARTOONS_FILTER
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.GENRE_SCIENCE_FICTION_FILTER

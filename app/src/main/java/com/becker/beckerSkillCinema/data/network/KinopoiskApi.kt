@@ -1,17 +1,17 @@
 package com.becker.beckerSkillCinema.data.network
 
 import com.becker.beckerSkillCinema.data.GalleryTypes
-import com.becker.beckerSkillCinema.data.filmByFilter.ResponseByFilter
-import com.becker.beckerSkillCinema.data.filmByFilter.ResponseGenresCountries
-import com.becker.beckerSkillCinema.data.filmById.ResponseCurrentFilm
-import com.becker.beckerSkillCinema.data.filmGallery.ResponseFilmGallery
-import com.becker.beckerSkillCinema.data.filmsPremier.ResponsePremier
-import com.becker.beckerSkillCinema.data.filmsTop.ResponseTop
-import com.becker.beckerSkillCinema.data.personFromSearch.ResponsePeopleFromSearch
-import com.becker.beckerSkillCinema.data.seasons.ResponseSeasons
-import com.becker.beckerSkillCinema.data.similarFilm.ResponseSimilarFilms
-import com.becker.beckerSkillCinema.data.staffByFilmId.ResponseStaffByFilmId
-import com.becker.beckerSkillCinema.data.staffById.ResponseStaffById
+import com.becker.beckerSkillCinema.data.entities.filmByFilter.ResponseByFilter
+import com.becker.beckerSkillCinema.data.entities.filmByFilter.ResponseGenresCountries
+import com.becker.beckerSkillCinema.data.entities.filmById.ResponseCurrentFilm
+import com.becker.beckerSkillCinema.data.entities.filmGallery.ResponseFilmGallery
+import com.becker.beckerSkillCinema.data.entities.filmsPremier.ResponsePremier
+import com.becker.beckerSkillCinema.data.entities.filmsTop.ResponseTop
+import com.becker.beckerSkillCinema.data.entities.personFromSearch.ResponsePeopleFromSearch
+import com.becker.beckerSkillCinema.data.entities.seasons.ResponseSeasons
+import com.becker.beckerSkillCinema.data.entities.similarFilm.ResponseSimilarFilms
+import com.becker.beckerSkillCinema.data.entities.staffByFilmId.ResponseStaffByFilmId
+import com.becker.beckerSkillCinema.data.entities.staffById.ResponseStaffById
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT1
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT2
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT3
@@ -20,7 +20,6 @@ import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGH
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT6
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT7
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT8
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT9
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT10
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT11
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT12

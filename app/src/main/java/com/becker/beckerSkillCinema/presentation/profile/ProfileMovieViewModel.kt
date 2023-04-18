@@ -3,7 +3,7 @@ package com.becker.beckerSkillCinema.presentation.profile
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.becker.beckerSkillCinema.data.filmById.ResponseCurrentFilm
+import com.becker.beckerSkillCinema.data.entities.filmById.ResponseCurrentFilm
 import com.becker.beckerSkillCinema.data.localData.entities.*
 import com.becker.beckerSkillCinema.data.profile.Collections
 import com.becker.beckerSkillCinema.domain.UseCaseLocal

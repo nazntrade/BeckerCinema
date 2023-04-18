@@ -4,9 +4,9 @@ import android.content.Context
 import android.graphics.RectF
 import android.widget.ImageView
 import com.becker.beckerSkillCinema.R
-import com.becker.beckerSkillCinema.data.filmGallery.ItemImageGallery
-import com.becker.beckerSkillCinema.data.similarFilm.SimilarItem
-import com.becker.beckerSkillCinema.data.entitys.HomeItem
+import com.becker.beckerSkillCinema.data.entities.filmGallery.ItemImageGallery
+import com.becker.beckerSkillCinema.data.entities.similarFilm.SimilarItem
+import com.becker.beckerSkillCinema.data.entities.HomeItem
 import com.becker.beckerSkillCinema.presentation.search.datepicker.Date
 import com.becker.beckerSkillCinema.presentation.search.datepicker.Draw
 import com.becker.beckerSkillCinema.presentation.search.datepicker.SettingsPicker

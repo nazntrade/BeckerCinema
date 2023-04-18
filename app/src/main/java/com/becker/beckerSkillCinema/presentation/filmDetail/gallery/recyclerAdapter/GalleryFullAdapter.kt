@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.becker.beckerSkillCinema.data.filmGallery.ItemImageGallery
+import com.becker.beckerSkillCinema.data.entities.filmGallery.ItemImageGallery
 import com.becker.beckerSkillCinema.databinding.ItemGalleryImageBinding
 import com.becker.beckerSkillCinema.utils.loadImage
 
