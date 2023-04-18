@@ -2,8 +2,8 @@ package com.becker.beckerSkillCinema.presentation.filmDetail.staff.staffDetail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.becker.beckerSkillCinema.data.network.networkEntities.staffById.ResponseStaffById
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
-import com.becker.beckerSkillCinema.data.entities.staffById.ResponseStaffById
 import com.becker.beckerSkillCinema.domain.GetStaffByIdUseCase
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import dagger.hilt.android.lifecycle.HiltViewModel

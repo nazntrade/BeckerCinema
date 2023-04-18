@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.core.view.isInvisible
 import androidx.recyclerview.widget.RecyclerView
 import com.becker.beckerSkillCinema.data.CategoriesFilms
-import com.becker.beckerSkillCinema.data.home.HomeList
+import com.becker.beckerSkillCinema.data.HomeList
 import com.becker.beckerSkillCinema.databinding.ItemCategoryListBinding
 import com.becker.beckerSkillCinema.presentation.home.homeAdapters.filmAdapter.FilmAdapter
 

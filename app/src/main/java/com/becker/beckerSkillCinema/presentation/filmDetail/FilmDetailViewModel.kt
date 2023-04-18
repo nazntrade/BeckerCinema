@@ -11,11 +11,11 @@ import com.becker.beckerSkillCinema.data.GalleryTypes
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.data.ParamsFilterGallery
 import com.becker.beckerSkillCinema.data.Professions
-import com.becker.beckerSkillCinema.data.entities.filmById.ResponseCurrentFilm
-import com.becker.beckerSkillCinema.data.entities.filmGallery.ItemImageGallery
-import com.becker.beckerSkillCinema.data.entities.seasons.Season
-import com.becker.beckerSkillCinema.data.entities.similarFilm.SimilarItem
-import com.becker.beckerSkillCinema.data.entities.staffByFilmId.ResponseStaffByFilmId
+import com.becker.beckerSkillCinema.data.network.networkEntities.filmById.ResponseCurrentFilm
+import com.becker.beckerSkillCinema.data.network.networkEntities.filmGallery.ItemImageGallery
+import com.becker.beckerSkillCinema.data.network.networkEntities.seasons.Season
+import com.becker.beckerSkillCinema.data.network.networkEntities.similarFilm.SimilarItem
+import com.becker.beckerSkillCinema.data.network.networkEntities.staffByFilmId.ResponseStaffByFilmId
 import com.becker.beckerSkillCinema.domain.*
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import com.becker.beckerSkillCinema.presentation.filmDetail.gallery.recyclerAdapter.GalleryFullPagingSource

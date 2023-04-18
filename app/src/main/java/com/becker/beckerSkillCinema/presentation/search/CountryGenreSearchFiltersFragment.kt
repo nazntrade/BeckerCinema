@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.becker.beckerSkillCinema.R
-import com.becker.beckerSkillCinema.data.entities.filmByFilter.FilterCountry
 import com.becker.beckerSkillCinema.databinding.FragmentSearchFiltersBinding
-import com.becker.beckerSkillCinema.data.entities.FilterCountryGenre
+import com.becker.beckerSkillCinema.data.network.networkEntities.FilterCountryGenre
+import com.becker.beckerSkillCinema.data.network.networkEntities.filmByFilter.FilterCountry
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.search.adapters.CountryGenreSearchFiltersAdapter
 import com.becker.beckerSkillCinema.utils.autoCleared
@@ -79,7 +79,7 @@ class CountryGenreSearchFiltersFragment : ViewBindingFragment<FragmentSearchFilt
 
         binding.searchFiltersView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                if (query == null || query.isEmpty()) {
+                if (query.isNullOrEmpty()) {
                     adapter.submitList(list.toMutableList())
                 } else {
                     listToDisplay.clear()
@@ -98,7 +98,7 @@ class CountryGenreSearchFiltersFragment : ViewBindingFragment<FragmentSearchFilt
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                if (newText == null || newText.isEmpty()) {
+                if (newText.isNullOrEmpty()) {
                     adapter.submitList(list.toMutableList())
                 } else {
                     listToDisplay.clear()

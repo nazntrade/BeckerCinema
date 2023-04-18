@@ -1,7 +1,7 @@
 package com.becker.beckerSkillCinema.domain
 
+import com.becker.beckerSkillCinema.data.network.networkEntities.staffById.ResponseStaffById
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
-import com.becker.beckerSkillCinema.data.entities.staffById.ResponseStaffById
 import javax.inject.Inject
 
 class GetStaffByIdUseCase @Inject constructor(

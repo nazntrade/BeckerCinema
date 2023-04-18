@@ -15,7 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.data.Professions
-import com.becker.beckerSkillCinema.data.entities.staffById.StaffsFilms
+import com.becker.beckerSkillCinema.data.network.networkEntities.staffById.StaffsFilms
 import com.becker.beckerSkillCinema.databinding.FragmentStaffFilmographyBinding
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.filmDetail.staff.staffDetail.adapter.FilmographyAdapter

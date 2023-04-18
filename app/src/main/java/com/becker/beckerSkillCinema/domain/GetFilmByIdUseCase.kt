@@ -1,7 +1,7 @@
 package com.becker.beckerSkillCinema.domain
 
+import com.becker.beckerSkillCinema.data.network.networkEntities.filmById.ResponseCurrentFilm
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
-import com.becker.beckerSkillCinema.data.entities.filmById.ResponseCurrentFilm
 import javax.inject.Inject
 
 class GetFilmByIdUseCase @Inject constructor(private val repository: CinemaRepository) {

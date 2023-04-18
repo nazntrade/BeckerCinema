@@ -2,7 +2,7 @@ package com.becker.beckerSkillCinema.di
 
 import android.app.Application
 import androidx.room.Room
-import com.becker.beckerSkillCinema.data.localData.MovieDataBase
+import com.becker.beckerSkillCinema.data.local.MovieDataBase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

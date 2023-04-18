@@ -8,13 +8,13 @@ import androidx.paging.PagingData
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
 import com.becker.beckerSkillCinema.data.SearchParamsPeopleOrFilm
-import com.becker.beckerSkillCinema.data.entities.filmByFilter.FilterCountry
-import com.becker.beckerSkillCinema.data.entities.filmByFilter.FilterGenre
-import com.becker.beckerSkillCinema.data.entities.personFromSearch.PeopleFromSearch
 import com.becker.beckerSkillCinema.domain.GetFilmListUseCase
 import com.becker.beckerSkillCinema.domain.GetGenresCountriesUseCase
 import com.becker.beckerSkillCinema.domain.GetPeopleFromSearchUseCase
-import com.becker.beckerSkillCinema.data.entities.HomeItem
+import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.network.networkEntities.filmByFilter.FilterCountry
+import com.becker.beckerSkillCinema.data.network.networkEntities.filmByFilter.FilterGenre
+import com.becker.beckerSkillCinema.data.network.networkEntities.personFromSearch.PeopleFromSearch
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import com.becker.beckerSkillCinema.presentation.home.allFilmsByCategory.allFilmAdapters.FilmsByFilterPagingSource
 import com.becker.beckerSkillCinema.presentation.search.SearchFragment.Companion.TYPE_FILM

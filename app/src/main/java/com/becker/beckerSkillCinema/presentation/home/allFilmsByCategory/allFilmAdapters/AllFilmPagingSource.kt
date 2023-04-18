@@ -6,7 +6,7 @@ import com.becker.beckerSkillCinema.data.*
 import com.becker.beckerSkillCinema.domain.GetFilmListUseCase
 import com.becker.beckerSkillCinema.domain.GetPremierFilmUseCase
 import com.becker.beckerSkillCinema.domain.GetTopFilmsUseCase
-import com.becker.beckerSkillCinema.data.entities.HomeItem
+import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.GENRE_BIOGRAPHY_FILTER
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.GENRE_CARTOONS_FILTER
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.GENRE_SCIENCE_FICTION_FILTER
@@ -19,10 +19,10 @@ class AllFilmPagingSource(
     private val getPremierFilmUseCase: GetPremierFilmUseCase,
     private val getTopFilmsUseCase: GetTopFilmsUseCase,
     private val getFilmListUseCase: GetFilmListUseCase
-) : PagingSource<Int, HomeItem>() {
-    override fun getRefreshKey(state: PagingState<Int, HomeItem>): Int = FIRST_PAGE
+) : PagingSource<Int, com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem>() {
+    override fun getRefreshKey(state: PagingState<Int, com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem>): Int = FIRST_PAGE
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, HomeItem> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem> {
         val page = params.key ?: FIRST_PAGE
         return kotlin.runCatching {
             when (categoriesFilms) {

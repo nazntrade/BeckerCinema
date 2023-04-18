@@ -1,6 +1,11 @@
 package com.becker.beckerSkillCinema.domain
 
-import com.becker.beckerSkillCinema.data.localData.entities.*
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.CustomCollection
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Favorites
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Interesting
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Movie
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.ToWatch
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Watched
 import com.becker.beckerSkillCinema.data.repositories.RepositoryDataBase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

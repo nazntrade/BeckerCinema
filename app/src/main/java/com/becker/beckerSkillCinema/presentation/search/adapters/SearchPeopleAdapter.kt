@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.becker.beckerSkillCinema.R
-import com.becker.beckerSkillCinema.data.entities.personFromSearch.PeopleFromSearch
+import com.becker.beckerSkillCinema.data.network.networkEntities.personFromSearch.PeopleFromSearch
 import com.becker.beckerSkillCinema.databinding.ItemFilmSearchBinding
 import com.becker.beckerSkillCinema.utils.MyStrings
 import com.becker.beckerSkillCinema.utils.loadImage

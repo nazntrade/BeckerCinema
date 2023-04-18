@@ -14,7 +14,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.databinding.FragmentStaffDetailBinding
-import com.becker.beckerSkillCinema.data.entities.HomeItem
+import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.home.homeAdapters.filmAdapter.FilmAdapter
@@ -135,11 +135,11 @@ class FragmentStaffDetail :
                                         staff.films.size
                                     )
 
-                                val list: MutableList<HomeItem> = staff.films.toMutableList()
+                                val list: MutableList<com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem> = staff.films.toMutableList()
                                 list.removeAll { it.rating == null }
                                 val sortedListBest =
                                     list.sortedBy { it.rating?.toDouble() }.reversed()
-                                val resultBest = mutableListOf<HomeItem>()
+                                val resultBest = mutableListOf<com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem>()
                                 if (sortedListBest.size > 10) {
                                     repeat(10) { resultBest.add(sortedListBest[it]) }
                                 } else resultBest.addAll(sortedListBest)
@@ -148,7 +148,7 @@ class FragmentStaffDetail :
                                 filmAdapter.submitList(resultBest)
                             }
 
-                            if (staff.facts == null || staff.facts.isEmpty()) {
+                            if (staff.facts.isNullOrEmpty()) {
                                 factsTitle.isVisible = false
                                 factsFieldText.isVisible = false
                             } else {

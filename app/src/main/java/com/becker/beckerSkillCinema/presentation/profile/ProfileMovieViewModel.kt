@@ -3,9 +3,14 @@ package com.becker.beckerSkillCinema.presentation.profile
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.becker.beckerSkillCinema.data.entities.filmById.ResponseCurrentFilm
-import com.becker.beckerSkillCinema.data.localData.entities.*
-import com.becker.beckerSkillCinema.data.profile.Collections
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.CustomCollection
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Favorites
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Interesting
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Movie
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.ToWatch
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Watched
+import com.becker.beckerSkillCinema.data.Collections
+import com.becker.beckerSkillCinema.data.network.networkEntities.filmById.ResponseCurrentFilm
 import com.becker.beckerSkillCinema.domain.UseCaseLocal
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

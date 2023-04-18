@@ -1,7 +1,17 @@
 package com.becker.beckerSkillCinema.data.repositories
 
-import com.becker.beckerSkillCinema.data.localData.dao.*
-import com.becker.beckerSkillCinema.data.localData.entities.*
+import com.becker.beckerSkillCinema.data.local.dao.CustomCollectionDao
+import com.becker.beckerSkillCinema.data.local.dao.FavoritesDao
+import com.becker.beckerSkillCinema.data.local.dao.InterestingDao
+import com.becker.beckerSkillCinema.data.local.dao.MovieDao
+import com.becker.beckerSkillCinema.data.local.dao.ToWatchDao
+import com.becker.beckerSkillCinema.data.local.dao.WatchedDao
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.CustomCollection
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Favorites
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Interesting
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Movie
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.ToWatch
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Watched
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

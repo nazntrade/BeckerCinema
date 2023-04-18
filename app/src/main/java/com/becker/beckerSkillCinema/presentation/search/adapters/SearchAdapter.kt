@@ -9,24 +9,24 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.databinding.ItemFilmSearchBinding
-import com.becker.beckerSkillCinema.data.entities.HomeItem
+import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
 import com.becker.beckerSkillCinema.utils.MyStrings
 import com.becker.beckerSkillCinema.utils.loadImage
 
 class SearchAdapter(
     private val onClick: (Int) -> Unit
-) : PagingDataAdapter<HomeItem, SearchAdapter.SearchViewHolder>(SearchDiffUtil()) {
+) : PagingDataAdapter<com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem, SearchAdapter.SearchViewHolder>(SearchDiffUtil()) {
 
-    class SearchDiffUtil : DiffUtil.ItemCallback<HomeItem>() {
+    class SearchDiffUtil : DiffUtil.ItemCallback<com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem>() {
         override fun areItemsTheSame(
-            oldItem: HomeItem,
-            newItem: HomeItem
+            oldItem: com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem,
+            newItem: com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
         ) = oldItem.filmId == newItem.filmId
 
         @SuppressLint("DiffUtilEquals")
         override fun areContentsTheSame(
-            oldItem: HomeItem,
-            newItem: HomeItem
+            oldItem: com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem,
+            newItem: com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
         ) = oldItem == newItem
     }
 

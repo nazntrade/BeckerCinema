@@ -3,7 +3,7 @@ package com.becker.beckerSkillCinema.presentation.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.becker.beckerSkillCinema.data.*
-import com.becker.beckerSkillCinema.data.home.HomeList
+import com.becker.beckerSkillCinema.data.HomeList
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.domain.*
 import com.becker.beckerSkillCinema.presentation.StateLoading
