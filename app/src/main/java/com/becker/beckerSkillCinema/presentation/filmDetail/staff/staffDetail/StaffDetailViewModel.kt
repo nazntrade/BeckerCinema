@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.becker.beckerSkillCinema.data.network.networkEntities.staffById.ResponseStaffById
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
-import com.becker.beckerSkillCinema.domain.GetStaffByIdUseCase
+import com.becker.beckerSkillCinema.domain.network.GetStaffByIdUseCase
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -34,7 +34,7 @@ class StaffDetailViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 _loadCurrentStaff.value = StateLoading.Loading
-                val staff = getStaffByIdUseCase.executeStaffById(staffId)
+                val staff = getStaffByIdUseCase.execute(staffId)
                 _currentStaff.value = staff
                 _loadCurrentStaff.value = StateLoading.Success
             } catch (e: Exception) {

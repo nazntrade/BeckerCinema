@@ -11,7 +11,26 @@ import com.becker.beckerSkillCinema.data.local.dataBaseEntities.ToWatch
 import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Watched
 import com.becker.beckerSkillCinema.data.Collections
 import com.becker.beckerSkillCinema.data.network.networkEntities.filmById.ResponseCurrentFilm
-import com.becker.beckerSkillCinema.domain.UseCaseLocal
+import com.becker.beckerSkillCinema.domain.local.AddMovieToCustomCollectionUseCase
+import com.becker.beckerSkillCinema.domain.local.AddMovieToDataBaseUseCase
+import com.becker.beckerSkillCinema.domain.local.AddMovieToInterestingUseCase
+import com.becker.beckerSkillCinema.domain.local.AddToFavoritesUseCase
+import com.becker.beckerSkillCinema.domain.local.AddToWatchUseCase
+import com.becker.beckerSkillCinema.domain.local.AddToWatchedUseCase
+import com.becker.beckerSkillCinema.domain.local.ClearInterestingUseCase
+import com.becker.beckerSkillCinema.domain.local.ClearWatchedUseCase
+import com.becker.beckerSkillCinema.domain.local.DeleteCustomCollectionUseCase
+import com.becker.beckerSkillCinema.domain.local.DeleteFromFavoritesUseCase
+import com.becker.beckerSkillCinema.domain.local.DeleteFromToWatchUseCase
+import com.becker.beckerSkillCinema.domain.local.DeleteFromWatchedUseCase
+import com.becker.beckerSkillCinema.domain.local.DeleteMovieFromCustomCollectionUseCase
+import com.becker.beckerSkillCinema.domain.local.GetAllFavoritesUseCase
+import com.becker.beckerSkillCinema.domain.local.GetAllInterestingMoviesUseCase
+import com.becker.beckerSkillCinema.domain.local.GetAllLocalMoviesUseCase
+import com.becker.beckerSkillCinema.domain.local.GetAllMoviesFromCustomCollectionUseCase
+import com.becker.beckerSkillCinema.domain.local.GetAllToWatchUseCase
+import com.becker.beckerSkillCinema.domain.local.GetAllWatchedUseCase
+import com.becker.beckerSkillCinema.domain.local.GetMovieFromDataBaseByIdUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -24,7 +43,26 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProfileMovieViewModel @Inject constructor(
-    private val useCaseLocal: UseCaseLocal,
+    private val deleteFromToWatchUseCase: DeleteFromToWatchUseCase,
+    private val addToWatchUseCase: AddToWatchUseCase,
+    private val getAllToWatchUseCase: GetAllToWatchUseCase,
+    private val deleteFromFavoritesUseCase: DeleteFromFavoritesUseCase,
+    private val addToFavoritesUseCase: AddToFavoritesUseCase,
+    private val getAllFavoritesUseCase: GetAllFavoritesUseCase,
+    private val clearWatchedUseCase: ClearWatchedUseCase,
+    private val deleteFromWatchedUseCase: DeleteFromWatchedUseCase,
+    private val getMovieFromDataBaseByIdUseCase: GetMovieFromDataBaseByIdUseCase,
+    private val getAllWatchedUseCase: GetAllWatchedUseCase,
+    private val getAllMoviesFromCustomCollectionUseCase: GetAllMoviesFromCustomCollectionUseCase,
+    private val getAllLocalMoviesUseCase: GetAllLocalMoviesUseCase,
+    private val getAllInterestingMoviesUseCase: GetAllInterestingMoviesUseCase,
+    private val deleteMovieFromCustomCollectionUseCase: DeleteMovieFromCustomCollectionUseCase,
+    private val addMovieToCustomCollectionUseCase: AddMovieToCustomCollectionUseCase,
+    private val addMovieToDataBaseUseCase: AddMovieToDataBaseUseCase,
+    private val addMovieToInterestingUseCase: AddMovieToInterestingUseCase,
+    private val addToWatchedUseCase: AddToWatchedUseCase,
+    private val clearInterestingUseCase: ClearInterestingUseCase,
+    private val deleteCustomCollectionUseCase: DeleteCustomCollectionUseCase,
     app: Application
 ) : AndroidViewModel(app) {
 
@@ -76,10 +114,10 @@ class ProfileMovieViewModel @Inject constructor(
     private val _customCollections = MutableStateFlow<List<CustomCollection>>(emptyList())
     val customCollections = _customCollections.asStateFlow()
 
-    fun getAllInteresting() = useCaseLocal.getAllInterestingMovies()
+    fun getAllInteresting() = getAllInterestingMoviesUseCase.execute()
 
     private suspend fun addMovieToInteresting(movieId: Int) {
-        useCaseLocal.addMovieToInteresting(
+        addMovieToInterestingUseCase.execute(
             interesting = Interesting(
                 interestingId = movieId,
                 dateAdded = getDateTime()
@@ -88,7 +126,7 @@ class ProfileMovieViewModel @Inject constructor(
     }
 
     private suspend fun deleteAllMoviesFromInteresting() {
-        useCaseLocal.clearInteresting()
+        clearInterestingUseCase.execute()
     }
 
     fun addCurrentFilmToHistory(movieId: Int) {
@@ -116,7 +154,8 @@ class ProfileMovieViewModel @Inject constructor(
             try {
                 val interestingList = mutableListOf<Movie>()
                 allInteresting.forEach { item ->
-                    val interestingMovie = useCaseLocal.getMovieFromDataBaseById(item.interestingId)
+                    val interestingMovie =
+                        getMovieFromDataBaseByIdUseCase.execute(item.interestingId)
                     interestingList.add(interestingMovie)
                 }
                 _interestingList.value = interestingList
@@ -126,10 +165,11 @@ class ProfileMovieViewModel @Inject constructor(
         }
     }
 
-    fun getAllMoviesFromCustomCollection() = useCaseLocal.getAllMoviesFromCustomCollection()
+    fun getAllMoviesFromCustomCollection() =
+        getAllMoviesFromCustomCollectionUseCase.execute()
 
     suspend fun addMovieToCustomCollection(collectionName: String, movieId: Int) {
-        useCaseLocal.addMovieToCustomCollection(
+        addMovieToCustomCollectionUseCase.execute(
             customCollection = CustomCollection(
                 collectionName = collectionName,
                 movieId = movieId,
@@ -139,11 +179,12 @@ class ProfileMovieViewModel @Inject constructor(
     }
 
     private suspend fun deleteMovieFromCustomCollection(collectionName: String, movieId: Int) {
-        useCaseLocal.deleteMovieFromCustomCollection(collectionName, movieId)
+        deleteMovieFromCustomCollectionUseCase
+            .execute(collectionName, movieId)
     }
 
     private suspend fun deleteCustomCollection(collectionName: String) {
-        useCaseLocal.deleteCustomCollection(collectionName)
+        deleteCustomCollectionUseCase.execute(collectionName)
     }
 
     fun deleteCollection(collectionName: String) {
@@ -181,7 +222,8 @@ class ProfileMovieViewModel @Inject constructor(
                         filteredList.forEach { item ->
                             if (item.movieId != 0) {
                                 val customCollectionMovie =
-                                    useCaseLocal.getMovieFromDataBaseById(item.movieId)
+                                    getMovieFromDataBaseByIdUseCase
+                                        .execute(item.movieId)
                                 customCollectionList.add(customCollectionMovie)
                             }
                         }
@@ -281,7 +323,7 @@ class ProfileMovieViewModel @Inject constructor(
     fun getCurrentMovieFromDataBaseById(movieId: Int) {
         viewModelScope.launch {
             try {
-                _movieById.value = useCaseLocal.getMovieFromDataBaseById(movieId)
+                _movieById.value = getMovieFromDataBaseByIdUseCase.execute(movieId)
             } catch (e: Throwable) {
                 Timber.e("getMovieFromDataBaseById $e")
             }
@@ -291,7 +333,7 @@ class ProfileMovieViewModel @Inject constructor(
     fun addMovieToDataBase(movie: ResponseCurrentFilm) {
         viewModelScope.launch {
             try {
-                useCaseLocal.addMovie(
+                addMovieToDataBaseUseCase.execute(
                     movie = Movie(
                         movieId = movie.kinopoiskId,
                         posterUri = movie.posterUrl,
@@ -318,12 +360,12 @@ class ProfileMovieViewModel @Inject constructor(
         }
     }
 
-    fun getAllWatched() = useCaseLocal.getAllWatched()
+    fun getAllWatched() = getAllWatchedUseCase.execute()
 
     private suspend fun addToWatched(movieId: Int) {
         viewModelScope.launch {
             try {
-                useCaseLocal.addToWatched(
+                addToWatchedUseCase.execute(
                     watched = Watched(
                         watchedId = movieId,
                         dateAdded = getDateTime()
@@ -338,7 +380,7 @@ class ProfileMovieViewModel @Inject constructor(
     private suspend fun deleteFromWatched(movieId: Int) {
         viewModelScope.launch {
             try {
-                useCaseLocal.deleteFromWatched(movieId)
+                deleteFromWatchedUseCase.execute(movieId)
             } catch (e: Throwable) {
                 Timber.e("deleteFromWatched $e")
             }
@@ -378,7 +420,8 @@ class ProfileMovieViewModel @Inject constructor(
             try {
                 val watchedList = mutableListOf<Movie>()
                 allWatched.forEach { item ->
-                    val watchedMovie = useCaseLocal.getMovieFromDataBaseById(item.watchedId)
+                    val watchedMovie =
+                        getMovieFromDataBaseByIdUseCase.execute(item.watchedId)
                     watchedList.add(watchedMovie)
                 }
                 _watchedList.value = watchedList
@@ -389,7 +432,7 @@ class ProfileMovieViewModel @Inject constructor(
     }
 
     private suspend fun deleteAllMoviesFromWatched() {
-        useCaseLocal.clearWatched()
+        clearWatchedUseCase.execute()
     }
 
     fun onClearWatched() {
@@ -402,12 +445,14 @@ class ProfileMovieViewModel @Inject constructor(
         }
     }
 
-    fun getAllFavorites() = useCaseLocal.getAllFavorites()
+    fun getAllFavorites() = getAllFavoritesUseCase.execute()
+
+    fun getAllMovieFromDataBase() = getAllLocalMoviesUseCase.execute()
 
     private suspend fun addToFavorites(movieId: Int) {
         viewModelScope.launch {
             try {
-                useCaseLocal.addToFavorites(
+                addToFavoritesUseCase.execute(
                     favorites = Favorites(
                         favoritesId = movieId,
                         dateAdded = getDateTime()
@@ -422,7 +467,7 @@ class ProfileMovieViewModel @Inject constructor(
     private suspend fun deleteFromFavorites(movieId: Int) {
         viewModelScope.launch {
             try {
-                useCaseLocal.deleteFromFavorites(movieId)
+                deleteFromFavoritesUseCase.execute(movieId)
             } catch (e: Throwable) {
                 Timber.e("deleteFromFavorites $e")
             }
@@ -460,7 +505,8 @@ class ProfileMovieViewModel @Inject constructor(
             try {
                 val favoritesList = mutableListOf<Movie>()
                 allFavorites.forEach { item ->
-                    val favoriteMovie = useCaseLocal.getMovieFromDataBaseById(item.favoritesId)
+                    val favoriteMovie =
+                        getMovieFromDataBaseByIdUseCase.execute(item.favoritesId)
                     favoritesList.add(favoriteMovie)
                 }
                 _favoritesList.value = favoritesList
@@ -470,12 +516,12 @@ class ProfileMovieViewModel @Inject constructor(
         }
     }
 
-    fun getAllToWatch() = useCaseLocal.getAllToWatch()
+    fun getAllToWatch() = getAllToWatchUseCase.execute()
 
     private suspend fun addToWatch(movieId: Int) {
         viewModelScope.launch {
             try {
-                useCaseLocal.addToWatch(
+                addToWatchUseCase.execute(
                     toWatch = ToWatch(
                         toWatchId = movieId,
                         dateAdded = getDateTime()
@@ -490,7 +536,7 @@ class ProfileMovieViewModel @Inject constructor(
     private suspend fun deleteFromToWatch(movieId: Int) {
         viewModelScope.launch {
             try {
-                useCaseLocal.deleteFromToWatch(movieId)
+                deleteFromToWatchUseCase.execute(movieId)
             } catch (e: Throwable) {
                 Timber.e("deleteFromToWatch $e")
             }
@@ -528,7 +574,8 @@ class ProfileMovieViewModel @Inject constructor(
             try {
                 val toWatchList = mutableListOf<Movie>()
                 allToWatch.forEach { item ->
-                    val toWatchMovie = useCaseLocal.getMovieFromDataBaseById(item.toWatchId)
+                    val toWatchMovie =
+                        getMovieFromDataBaseByIdUseCase.execute(item.toWatchId)
                     toWatchList.add(toWatchMovie)
                 }
                 _toWatchList.value = toWatchList

@@ -4,7 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.becker.beckerSkillCinema.data.ParamsFilterGallery
 import com.becker.beckerSkillCinema.data.network.networkEntities.filmGallery.ItemImageGallery
-import com.becker.beckerSkillCinema.domain.GetGalleryByIdUseCase
+import com.becker.beckerSkillCinema.domain.network.GetGalleryByIdUseCase
 
 class GalleryFullPagingSource(
     private val getGalleryByIdUseCase: GetGalleryByIdUseCase,
@@ -15,7 +15,7 @@ class GalleryFullPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ItemImageGallery> {
         val page = params.key ?: FIRST_PAGE
         return kotlin.runCatching {
-            getGalleryByIdUseCase.executeGalleryByFilmId(
+            getGalleryByIdUseCase.execute(
                 filterParams.filmId,
                 filterParams.galleryType,
                 page

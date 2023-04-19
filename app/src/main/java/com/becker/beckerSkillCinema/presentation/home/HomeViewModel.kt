@@ -5,7 +5,9 @@ import androidx.lifecycle.viewModelScope
 import com.becker.beckerSkillCinema.data.*
 import com.becker.beckerSkillCinema.data.HomeList
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
-import com.becker.beckerSkillCinema.domain.*
+import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
+import com.becker.beckerSkillCinema.domain.network.GetPremierFilmUseCase
+import com.becker.beckerSkillCinema.domain.network.GetTopFilmsUseCase
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.TOP_TYPES
 import com.becker.beckerSkillCinema.utils.toLimitTheNumberOfObjects
@@ -55,21 +57,21 @@ class HomeViewModel @Inject constructor(
                 val homeLists = listOf(
                     HomeList(
                         category = CategoriesFilms.PREMIERS,
-                        filmList = getPremierFilmUseCase.executePremieres(
+                        filmList = getPremierFilmUseCase.execute(
                             year = currentYear,
                             month = currentMonth
                         ).toLimitTheNumberOfObjects(20)
                     ),
                     HomeList(
                         category = CategoriesFilms.POPULAR_100,
-                        filmList = getTopFilmsUseCase.executeTopFilms(
+                        filmList = getTopFilmsUseCase.execute(
                             topType = TOP_TYPES.getValue(CategoriesFilms.POPULAR_100),
                             page = 1
                         )
                     ),
                     HomeList(
                         category = CategoriesFilms.BEST_250,
-                        filmList = getTopFilmsUseCase.executeTopFilms(
+                        filmList = getTopFilmsUseCase.execute(
                             topType = TOP_TYPES.getValue(CategoriesFilms.BEST_250),
                             page = 1
                         )
@@ -86,7 +88,7 @@ class HomeViewModel @Inject constructor(
                     ),
                     HomeList(
                         category = CategoriesFilms.MOST_AWAIT,
-                        filmList = getTopFilmsUseCase.executeTopFilms(
+                        filmList = getTopFilmsUseCase.execute(
                             topType = TOP_TYPES.getValue(CategoriesFilms.MOST_AWAIT),
                             page = 1
                         )

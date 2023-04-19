@@ -3,8 +3,7 @@ package com.becker.beckerSkillCinema.presentation.home.allFilmsByCategory.allFil
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
-import com.becker.beckerSkillCinema.domain.GetFilmListUseCase
-import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
 
 class FilmsByFilterPagingSource(
     private val filters: ParamsFilterFilm,

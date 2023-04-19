@@ -16,7 +16,11 @@ import com.becker.beckerSkillCinema.data.network.networkEntities.filmGallery.Ite
 import com.becker.beckerSkillCinema.data.network.networkEntities.seasons.Season
 import com.becker.beckerSkillCinema.data.network.networkEntities.similarFilm.SimilarItem
 import com.becker.beckerSkillCinema.data.network.networkEntities.staffByFilmId.ResponseStaffByFilmId
-import com.becker.beckerSkillCinema.domain.*
+import com.becker.beckerSkillCinema.domain.network.GetActorsListUseCase
+import com.becker.beckerSkillCinema.domain.network.GetFilmByIdUseCase
+import com.becker.beckerSkillCinema.domain.network.GetGalleryByIdUseCase
+import com.becker.beckerSkillCinema.domain.network.GetSeasonsUseCase
+import com.becker.beckerSkillCinema.domain.network.GetSimilarFilmsUseCase
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import com.becker.beckerSkillCinema.presentation.filmDetail.gallery.recyclerAdapter.GalleryFullPagingSource
 import com.becker.beckerSkillCinema.utils.MyStrings
@@ -85,7 +89,7 @@ class FilmDetailViewModel @Inject constructor(
             try {
                 _loadingCurrentFilmState.value = StateLoading.Loading
                 //mainInfoAboutMovie
-                _currentFilm.value = getFilmByIdUseCase.executeFilmById(currentFilmId!!)
+                _currentFilm.value = getFilmByIdUseCase.execute(currentFilmId!!)
                 setCrew()
                 setImage()
                 setSimilar()
@@ -100,7 +104,7 @@ class FilmDetailViewModel @Inject constructor(
     private fun setCrew() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val filmCrewNotSorted = getActorsByFilmIdUseCase.executeActorsList(currentFilmId!!)
+                val filmCrewNotSorted = getActorsByFilmIdUseCase.execute(currentFilmId!!)
                 toSortFilmCrew(filmCrewNotSorted)
             } catch (e: Throwable) {
                 Timber.e("setCrew $e")
@@ -121,7 +125,7 @@ class FilmDetailViewModel @Inject constructor(
     private fun setSimilar() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val responseSimilar = getSimilarFilmsUseCase.executeSimilarFilms(currentFilmId!!)
+                val responseSimilar = getSimilarFilmsUseCase.execute(currentFilmId!!)
                 if (responseSimilar.total != 0) {
                     val tempSimilarItem = responseSimilar.items!!
                     _currentFilmSimilar.value = tempSimilarItem.toLimitSimilarFilm(20)
@@ -138,7 +142,7 @@ class FilmDetailViewModel @Inject constructor(
     fun getSeasons(seriesId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                _seasons.value = getSeasonsUseCase.executeSeasons(seriesId).items
+                _seasons.value = getSeasonsUseCase.execute(seriesId).items
             } catch (e: Throwable) {
                 Timber.e("getSeasons $e")
             }
@@ -184,7 +188,7 @@ class FilmDetailViewModel @Inject constructor(
             try {
                 GALLERY_TYPES.forEach {
                     val tempPicturesByCategory = getGalleryByIdUseCase
-                        .executeGalleryByFilmId(filmId, it.key, 1)
+                        .execute(filmId, it.key, 1)
                     tempNumberOfPicturesByCategory[it.key] = tempPicturesByCategory.total
                     tempTotalNumberOfPictures += tempPicturesByCategory.total
                     totalPictures += tempPicturesByCategory.items

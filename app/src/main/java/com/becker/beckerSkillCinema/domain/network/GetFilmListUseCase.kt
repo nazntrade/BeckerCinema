@@ -1,4 +1,4 @@
-package com.becker.beckerSkillCinema.domain
+package com.becker.beckerSkillCinema.domain.network
 
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm

@@ -3,10 +3,9 @@ package com.becker.beckerSkillCinema.presentation.home.allFilmsByCategory.allFil
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.becker.beckerSkillCinema.data.*
-import com.becker.beckerSkillCinema.domain.GetFilmListUseCase
-import com.becker.beckerSkillCinema.domain.GetPremierFilmUseCase
-import com.becker.beckerSkillCinema.domain.GetTopFilmsUseCase
-import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
+import com.becker.beckerSkillCinema.domain.network.GetPremierFilmUseCase
+import com.becker.beckerSkillCinema.domain.network.GetTopFilmsUseCase
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.GENRE_BIOGRAPHY_FILTER
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.GENRE_CARTOONS_FILTER
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.GENRE_SCIENCE_FICTION_FILTER
@@ -27,16 +26,16 @@ class AllFilmPagingSource(
         return kotlin.runCatching {
             when (categoriesFilms) {
                 CategoriesFilms.PREMIERS -> {
-                    getPremierFilmUseCase.executePremieres(year, month)
+                    getPremierFilmUseCase.execute(year, month)
                 }
                 CategoriesFilms.POPULAR_100 -> {
-                    getTopFilmsUseCase.executeTopFilms(
+                    getTopFilmsUseCase.execute(
                         topType = TOP_TYPES.getValue(CategoriesFilms.POPULAR_100),
                         page = page
                     )
                 }
                 CategoriesFilms.BEST_250 -> {
-                    getTopFilmsUseCase.executeTopFilms(
+                    getTopFilmsUseCase.execute(
                         topType = TOP_TYPES.getValue(CategoriesFilms.BEST_250),
                         page = page
                     )
@@ -51,7 +50,7 @@ class AllFilmPagingSource(
                     )
                 }
                 CategoriesFilms.MOST_AWAIT -> {
-                    getTopFilmsUseCase.executeTopFilms(
+                    getTopFilmsUseCase.execute(
                         topType = TOP_TYPES.getValue(CategoriesFilms.MOST_AWAIT),
                         page = page
                     )

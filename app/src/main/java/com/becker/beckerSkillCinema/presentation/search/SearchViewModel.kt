@@ -8,9 +8,9 @@ import androidx.paging.PagingData
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
 import com.becker.beckerSkillCinema.data.SearchParamsPeopleOrFilm
-import com.becker.beckerSkillCinema.domain.GetFilmListUseCase
-import com.becker.beckerSkillCinema.domain.GetGenresCountriesUseCase
-import com.becker.beckerSkillCinema.domain.GetPeopleFromSearchUseCase
+import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
+import com.becker.beckerSkillCinema.domain.network.GetGenresCountriesUseCase
+import com.becker.beckerSkillCinema.domain.network.GetPeopleFromSearchUseCase
 import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
 import com.becker.beckerSkillCinema.data.network.networkEntities.filmByFilter.FilterCountry
 import com.becker.beckerSkillCinema.data.network.networkEntities.filmByFilter.FilterGenre
@@ -95,7 +95,7 @@ class SearchViewModel @Inject constructor(
             try {
                 _loadingState.value = StateLoading.Loading
                 val peopleList = getPeopleFromSearchUseCase
-                    .executePeopleFromSearch(getFilters().keyword, page = 1).items
+                    .execute(getFilters().keyword, page = 1).items
                 _peopleFromSearch.value = peopleList
                 _loadingState.value = StateLoading.Success
             } catch (e: Throwable) {
@@ -118,7 +118,7 @@ class SearchViewModel @Inject constructor(
     private fun getCountriesOrGenres() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val tempGenreCountry = getGenresCountriesUseCase.executeGenresCountries()
+                val tempGenreCountry = getGenresCountriesUseCase.execute()
                 _countries.value = tempGenreCountry.countries.sortedBy { it.name }
                 _genres.value = tempGenreCountry.genres.sortedBy { it.name }
             } catch (e: Throwable) {
