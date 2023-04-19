@@ -7,7 +7,6 @@ import android.os.Environment
 import androidx.navigation.fragment.NavHostFragment
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.databinding.ActivityMainBinding
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         if (Environment.getExternalStorageState() != Environment.MEDIA_MOUNTED) return
         val sharedPref = getSharedPreferences(
-            ConstantsAndParams.SHARED_PREFS_NAME,
+            SHARED_PREFS_NAME,
             Context.MODE_PRIVATE
         )
         val firstRun = sharedPref.getBoolean(FIRST_RUN, true)
@@ -59,6 +58,7 @@ class MainActivity : AppCompatActivity() {
 //    }
 
     companion object {
+        const val SHARED_PREFS_NAME = "onBoardingFirstRun"
         const val FIRST_RUN = "FirstRun"
     }
 }
