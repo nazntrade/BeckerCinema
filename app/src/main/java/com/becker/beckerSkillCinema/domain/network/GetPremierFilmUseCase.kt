@@ -1,7 +1,7 @@
 package com.becker.beckerSkillCinema.domain.network
 
-import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import javax.inject.Inject
 
 class GetPremierFilmUseCase @Inject constructor(

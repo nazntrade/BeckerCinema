@@ -6,7 +6,9 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.becker.beckerSkillCinema.data.*
+import com.becker.beckerSkillCinema.data.CategoriesFilms
+import com.becker.beckerSkillCinema.data.ParamsFilterFilm
+import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
 import com.becker.beckerSkillCinema.domain.network.GetPremierFilmUseCase
@@ -42,7 +44,8 @@ class AllFilmsViewModel @Inject constructor(
         repository.putFilmId(filmId)
     }
 
-    private var _pagedFilms: Flow<PagingData<com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem>>? = null
+    private var _pagedFilms: Flow<PagingData<HomeItem>>? =
+        null
     val pagedFilms
         get() = _pagedFilms
 

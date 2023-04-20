@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.becker.beckerSkillCinema.R
-import com.becker.beckerSkillCinema.databinding.FragmentSearchFiltersBinding
 import com.becker.beckerSkillCinema.data.network.networkEntities.FilterCountryGenre
 import com.becker.beckerSkillCinema.data.network.networkEntities.filmByFilter.FilterCountry
+import com.becker.beckerSkillCinema.databinding.FragmentSearchFiltersBinding
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.search.adapters.CountryGenreSearchFiltersAdapter
 import com.becker.beckerSkillCinema.utils.autoCleared
@@ -68,6 +68,7 @@ class CountryGenreSearchFiltersFragment : ViewBindingFragment<FragmentSearchFilt
                 binding.searchFiltersView.queryHint = getString(R.string.choose_country)
                 viewModel.countries.value
             }
+
             else -> {
                 binding.searchFiltersCategoryTv.text = getString(R.string.genre)
                 binding.searchFiltersView.queryHint = getString(R.string.choose_genre)
@@ -125,6 +126,7 @@ class CountryGenreSearchFiltersFragment : ViewBindingFragment<FragmentSearchFilt
                 is FilterCountry -> {
                     viewModel.getFilters().copy(countries = mapOf(filterType.id to filterType.name))
                 }
+
                 else -> {
                     viewModel.getFilters().copy(genres = mapOf(filterType.id to filterType.name))
                 }

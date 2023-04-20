@@ -53,10 +53,12 @@ class MainFragment : ViewBindingFragment<FragmentMainBinding>(FragmentMainBindin
                     navController.navigate(R.id.fragmentHome)
                     true
                 }
+
                 R.id.search -> {
                     navController.navigate(R.id.fragmentSearch)
                     true
                 }
+
                 else -> {
                     navController.navigate(R.id.fragmentProfile)
                     true

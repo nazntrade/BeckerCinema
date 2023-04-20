@@ -24,17 +24,25 @@ import com.becker.beckerSkillCinema.data.network.networkEntities.staffByFilmId.R
 import com.becker.beckerSkillCinema.databinding.FragmentFilmDetailBinding
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
-import com.becker.beckerSkillCinema.presentation.home.homeAdapters.filmAdapter.FilmAdapter
-import com.becker.beckerSkillCinema.utils.autoCleared
-import kotlinx.coroutines.launch
 import com.becker.beckerSkillCinema.presentation.filmDetail.gallery.galleryAdapter.GalleryAdapter
 import com.becker.beckerSkillCinema.presentation.filmDetail.staff.staffAdapter.StaffAdapter
+import com.becker.beckerSkillCinema.presentation.home.homeAdapters.filmAdapter.FilmAdapter
 import com.becker.beckerSkillCinema.presentation.profile.CollectionHandlerFragment
 import com.becker.beckerSkillCinema.presentation.profile.ProfileMovieViewModel
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.TOP_TYPES
+import com.becker.beckerSkillCinema.utils.autoCleared
 import com.becker.beckerSkillCinema.utils.loadImage
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import timber.log.Timber
+
+private const val MAX_ACTORS_COLUMN = 5
+private const val MAX_ACTORS_ROWS = 4
+private const val MAX_MAKERS_COLUMN = 3
+private const val MAX_MAKERS_ROWS = 2
+private const val INTENT_TYPE = "text/plain"
+private const val INTENT_TITLE = "Share Link"
+private const val POPUP_WINDOW_TAG = "POP_UP"
 
 class FragmentFilmDetail :
     ViewBindingFragment<FragmentFilmDetailBinding>(FragmentFilmDetailBinding::inflate) {
@@ -236,6 +244,7 @@ class FragmentFilmDetail :
                                 progressGroupContainer.noAnswerText.isVisible = false
                             }
                         }
+
                         is StateLoading.Success -> {
                             binding.apply {
                                 filmDetailMotionLayout.isGone = false
@@ -244,6 +253,7 @@ class FragmentFilmDetail :
                                 filmDescriptionGroup.isVisible = true
                             }
                         }
+
                         else -> {
                             binding.apply {
                                 filmDetailMotionLayout.isGone = true
@@ -625,15 +635,5 @@ class FragmentFilmDetail :
     private fun ResponseCurrentFilm.getAgeLimit(): String? {
         return if (this.ratingAgeLimits != null) this.ratingAgeLimits.removePrefix("age")
         else null
-    }
-
-    companion object {
-        private const val MAX_ACTORS_COLUMN = 5
-        private const val MAX_ACTORS_ROWS = 4
-        private const val MAX_MAKERS_COLUMN = 3
-        private const val MAX_MAKERS_ROWS = 2
-        private const val INTENT_TYPE = "text/plain"
-        private const val INTENT_TITLE = "Share Link"
-        private const val POPUP_WINDOW_TAG = "POP_UP"
     }
 }

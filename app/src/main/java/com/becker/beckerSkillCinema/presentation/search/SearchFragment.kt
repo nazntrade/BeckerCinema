@@ -322,7 +322,7 @@ class SearchFragment : ViewBindingFragment<FragmentSearchBinding>(FragmentSearch
     }
 
     companion object {
-      val TYPE_FILM = SearchParamsPeopleOrFilm.FILM
-       val TYPE_PEOPLE = SearchParamsPeopleOrFilm.PEOPLE
+        val TYPE_FILM = SearchParamsPeopleOrFilm.FILM
+        val TYPE_PEOPLE = SearchParamsPeopleOrFilm.PEOPLE
     }
 }

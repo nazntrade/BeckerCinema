@@ -8,7 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.databinding.FragmentSearchDatePickerBinding
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
-import java.util.*
+import java.util.Calendar
 
 class FragmentSearchDatePicker : ViewBindingFragment<FragmentSearchDatePickerBinding>(
     FragmentSearchDatePickerBinding::inflate

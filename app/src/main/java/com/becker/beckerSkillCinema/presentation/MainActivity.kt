@@ -1,12 +1,14 @@
 package com.becker.beckerSkillCinema.presentation
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.databinding.ActivityMainBinding
+import com.becker.beckerSkillCinema.utils.ConstantsAndParams.FIRST_RUN
+import com.becker.beckerSkillCinema.utils.ConstantsAndParams.SHARED_PREFS_NAME
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -56,9 +58,4 @@ class MainActivity : AppCompatActivity() {
 //            )
 //        )
 //    }
-
-    companion object {
-        const val SHARED_PREFS_NAME = "onBoardingFirstRun"
-        const val FIRST_RUN = "FirstRun"
-    }
 }

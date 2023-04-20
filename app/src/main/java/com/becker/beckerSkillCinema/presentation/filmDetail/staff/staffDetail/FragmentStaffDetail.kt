@@ -13,8 +13,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.becker.beckerSkillCinema.R
-import com.becker.beckerSkillCinema.databinding.FragmentStaffDetailBinding
 import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.databinding.FragmentStaffDetailBinding
 import com.becker.beckerSkillCinema.presentation.StateLoading
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.home.homeAdapters.filmAdapter.FilmAdapter
@@ -71,6 +71,7 @@ class FragmentStaffDetail :
                                 progressGroupContainer.noAnswerText.isVisible = false
                             }
                         }
+
                         is StateLoading.Success -> {
                             binding.apply {
                                 progressGroupContainer.progressGroup.isVisible = false
@@ -80,6 +81,7 @@ class FragmentStaffDetail :
                                 staffDetailFilmographyGroup.isVisible = true
                             }
                         }
+
                         else -> {
                             binding.apply {
                                 progressGroupContainer.progressGroup.isVisible = false
@@ -116,7 +118,12 @@ class FragmentStaffDetail :
                             else staffDetailProfession.isVisible = false
 
                             if (staff.birthday != null)
-                                "${getString(R.string.year_of_birth)} ${staff.birthday.substring(0, 4)}".also {
+                                "${getString(R.string.year_of_birth)} ${
+                                    staff.birthday.substring(
+                                        0,
+                                        4
+                                    )
+                                }".also {
                                     staffDetailBirthday.text = it
                                 }
                             else staffDetailBirthday.isVisible = false
@@ -135,11 +142,13 @@ class FragmentStaffDetail :
                                         staff.films.size
                                     )
 
-                                val list: MutableList<com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem> = staff.films.toMutableList()
+                                val list: MutableList<HomeItem> =
+                                    staff.films.toMutableList()
                                 list.removeAll { it.rating == null }
                                 val sortedListBest =
                                     list.sortedBy { it.rating?.toDouble() }.reversed()
-                                val resultBest = mutableListOf<com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem>()
+                                val resultBest =
+                                    mutableListOf<HomeItem>()
                                 if (sortedListBest.size > 10) {
                                     repeat(10) { resultBest.add(sortedListBest[it]) }
                                 } else resultBest.addAll(sortedListBest)

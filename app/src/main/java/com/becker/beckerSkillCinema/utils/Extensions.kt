@@ -92,12 +92,14 @@ fun Array<Array<Date>>.newDate(navigate: StateArrow, setting: SettingsPicker, bl
             Draw.createMatrix(setting)
             block()
         }
+
         StateArrow.BACK -> {
             setting.startDate =
                 this[1].first().date - ((setting.rows - 1) * setting.columns)
             Draw.createMatrix(setting)
             block()
         }
+
         StateArrow.NOT_NAVIGATE -> {}
     }
 }

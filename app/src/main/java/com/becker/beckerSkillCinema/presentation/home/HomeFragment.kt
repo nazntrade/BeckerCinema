@@ -79,12 +79,14 @@ class HomeFragment : ViewBindingFragment<FragmentHomeBinding>(FragmentHomeBindin
                                 categoryList.isVisible = false
                             }
                         }
+
                         is StateLoading.Success -> {
                             binding.apply {
                                 progressGroupContainer.progressGroup.isVisible = false
                                 categoryList.isVisible = true
                             }
                         }
+
                         else -> {
                             binding.apply {
                                 progressGroupContainer.progressGroup.isVisible = true

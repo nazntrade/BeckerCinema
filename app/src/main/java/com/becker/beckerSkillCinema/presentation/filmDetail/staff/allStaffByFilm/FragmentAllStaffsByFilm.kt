@@ -64,6 +64,7 @@ class FragmentAllStaffsByFilm : ViewBindingFragment<FragmentStaffAllByFilmBindin
                             adapter.submitList(actorList)
                         }
                     }
+
                     else -> {
                         binding.allStaffsCategoryTv.text =
                             resources.getString(R.string.label_film_makers)

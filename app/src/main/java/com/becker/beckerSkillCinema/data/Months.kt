@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.data
 
-enum class Months (val number: String) {
+enum class Months(val number: String) {
     JANUARY("01"),
     FEBRUARY("02"),
     MARCH("03"),

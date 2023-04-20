@@ -3,13 +3,13 @@ package com.becker.beckerSkillCinema.presentation.profile
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.becker.beckerSkillCinema.data.Collections
 import com.becker.beckerSkillCinema.data.local.dataBaseEntities.CustomCollection
 import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Favorites
 import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Interesting
 import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Movie
 import com.becker.beckerSkillCinema.data.local.dataBaseEntities.ToWatch
 import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Watched
-import com.becker.beckerSkillCinema.data.Collections
 import com.becker.beckerSkillCinema.data.network.networkEntities.filmById.ResponseCurrentFilm
 import com.becker.beckerSkillCinema.domain.local.AddMovieToCustomCollectionUseCase
 import com.becker.beckerSkillCinema.domain.local.AddMovieToDataBaseUseCase
@@ -38,7 +38,8 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Calendar
+import java.util.Locale
 import javax.inject.Inject
 
 @HiltViewModel

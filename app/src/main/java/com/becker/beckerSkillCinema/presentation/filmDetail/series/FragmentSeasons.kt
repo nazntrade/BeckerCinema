@@ -19,10 +19,10 @@ import com.becker.beckerSkillCinema.data.network.networkEntities.seasons.Season
 import com.becker.beckerSkillCinema.databinding.FragmentSeasonsBinding
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.filmDetail.FilmDetailViewModel
-import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 import com.becker.beckerSkillCinema.presentation.filmDetail.series.adapter.SeasonsAdapter
 import com.becker.beckerSkillCinema.utils.autoCleared
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import kotlinx.coroutines.launch
 
 class FragmentSeasons : ViewBindingFragment<FragmentSeasonsBinding>(

@@ -2,8 +2,10 @@ package com.becker.beckerSkillCinema.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.becker.beckerSkillCinema.data.*
+import com.becker.beckerSkillCinema.data.CategoriesFilms
+import com.becker.beckerSkillCinema.data.GenreFilter
 import com.becker.beckerSkillCinema.data.HomeList
+import com.becker.beckerSkillCinema.data.ParamsFilterFilm
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
 import com.becker.beckerSkillCinema.domain.network.GetPremierFilmUseCase
@@ -17,7 +19,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import java.time.Month
-import java.util.*
+import java.util.Calendar
 import javax.inject.Inject
 
 @HiltViewModel

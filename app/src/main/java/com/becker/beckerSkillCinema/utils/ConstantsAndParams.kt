@@ -1,11 +1,13 @@
 package com.becker.beckerSkillCinema.utils
 
-import com.becker.beckerSkillCinema.data.*
+import com.becker.beckerSkillCinema.data.CategoriesFilms
+import com.becker.beckerSkillCinema.data.TopTypesForApiQuery
 
 object ConstantsAndParams {
 
     const val BASE_URL = "https://kinopoiskapiunofficial.tech/api/"
-
+    const val SHARED_PREFS_NAME = "onBoardingFirstRun"
+    const val FIRST_RUN = "FirstRun"
     const val KINOPOISKACCESSRIGHT1 = "70e0059c-0587-4549-9cbf-8a9c5c4143f6"
     const val KINOPOISKACCESSRIGHT2 = "2c7d0bf6-864e-4403-a497-85dde3bc1c16"
     const val KINOPOISKACCESSRIGHT3 = "c92f9a94-f068-435f-855b-a5acff019cc5"

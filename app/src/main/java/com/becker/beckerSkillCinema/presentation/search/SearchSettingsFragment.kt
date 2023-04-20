@@ -11,7 +11,7 @@ import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.databinding.FragmentSearchSettingsBinding
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.google.android.material.slider.RangeSlider
-import java.util.*
+import java.util.Calendar
 
 class SearchSettingsFragment : ViewBindingFragment<FragmentSearchSettingsBinding>(
     FragmentSearchSettingsBinding::inflate
@@ -150,11 +150,13 @@ class SearchSettingsFragment : ViewBindingFragment<FragmentSearchSettingsBinding
                         type = Type.ALL.text
                     )
                 )
+
                 R.id.search_radio_films -> viewModel.updateFilters(
                     viewModel.getFilters().copy(
                         type = Type.FILM.text
                     )
                 )
+
                 R.id.search_radio_series -> viewModel.updateFilters(
                     viewModel.getFilters().copy(
                         type = Type.TV_SERIES.text
@@ -175,11 +177,13 @@ class SearchSettingsFragment : ViewBindingFragment<FragmentSearchSettingsBinding
                         order = Order.YEAR.text
                     )
                 )
+
                 R.id.search_radio_sorting_popular -> viewModel.updateFilters(
                     viewModel.getFilters().copy(
                         order = Order.NUM_VOTE.text
                     )
                 )
+
                 R.id.search_radio_sorting_rating -> viewModel.updateFilters(
                     viewModel.getFilters().copy(
                         order = Order.RATING.text

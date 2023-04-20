@@ -8,7 +8,6 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.data.GalleryTypes
-import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.data.ParamsFilterGallery
 import com.becker.beckerSkillCinema.data.Professions
 import com.becker.beckerSkillCinema.data.network.networkEntities.filmById.ResponseCurrentFilm
@@ -16,6 +15,7 @@ import com.becker.beckerSkillCinema.data.network.networkEntities.filmGallery.Ite
 import com.becker.beckerSkillCinema.data.network.networkEntities.seasons.Season
 import com.becker.beckerSkillCinema.data.network.networkEntities.similarFilm.SimilarItem
 import com.becker.beckerSkillCinema.data.network.networkEntities.staffByFilmId.ResponseStaffByFilmId
+import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.domain.network.GetActorsListUseCase
 import com.becker.beckerSkillCinema.domain.network.GetFilmByIdUseCase
 import com.becker.beckerSkillCinema.domain.network.GetGalleryByIdUseCase
@@ -233,16 +233,16 @@ class FilmDetailViewModel @Inject constructor(
     }
 
     companion object {
-         val GALLERY_TYPES = mapOf(
-             GalleryTypes.STILL.name to MyStrings.get(R.string.steel),
-             GalleryTypes.SHOOTING.name to MyStrings.get(R.string.shooting),
-             GalleryTypes.POSTER.name to MyStrings.get(R.string.poster),
-             GalleryTypes.FAN_ART.name to MyStrings.get(R.string.fan_art),
-             GalleryTypes.PROMO.name to MyStrings.get(R.string.promo),
-             GalleryTypes.CONCEPT.name to MyStrings.get(R.string.concept),
-             GalleryTypes.WALLPAPER.name to MyStrings.get(R.string.wallpaper),
-             GalleryTypes.COVER.name to MyStrings.get(R.string.cover),
-             GalleryTypes.SCREENSHOT.name to MyStrings.get(R.string.screenshot)
-         )
-     }
+        val GALLERY_TYPES = mapOf(
+            GalleryTypes.STILL.name to MyStrings.get(R.string.steel),
+            GalleryTypes.SHOOTING.name to MyStrings.get(R.string.shooting),
+            GalleryTypes.POSTER.name to MyStrings.get(R.string.poster),
+            GalleryTypes.FAN_ART.name to MyStrings.get(R.string.fan_art),
+            GalleryTypes.PROMO.name to MyStrings.get(R.string.promo),
+            GalleryTypes.CONCEPT.name to MyStrings.get(R.string.concept),
+            GalleryTypes.WALLPAPER.name to MyStrings.get(R.string.wallpaper),
+            GalleryTypes.COVER.name to MyStrings.get(R.string.cover),
+            GalleryTypes.SCREENSHOT.name to MyStrings.get(R.string.screenshot)
+        )
+    }
 }

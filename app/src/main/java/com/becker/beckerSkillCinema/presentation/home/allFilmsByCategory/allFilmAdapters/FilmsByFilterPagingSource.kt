@@ -3,19 +3,20 @@ package com.becker.beckerSkillCinema.presentation.home.allFilmsByCategory.allFil
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
+import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
 import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
 
 class FilmsByFilterPagingSource(
     private val filters: ParamsFilterFilm,
     private val getFilmListUseCase: GetFilmListUseCase
-) : PagingSource<Int, com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem>() {
-    override fun getRefreshKey(state: PagingState<Int, com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem>): Int? {
+) : PagingSource<Int, HomeItem>() {
+    override fun getRefreshKey(state: PagingState<Int, HomeItem>): Int? {
         val anchorPosition = state.anchorPosition ?: return null
         val page = state.closestPageToPosition(anchorPosition) ?: return null
         return page.prevKey?.plus(1) ?: page.nextKey?.minus(1)
     }
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, HomeItem> {
         val page = params.key ?: 1
         val pageSize = params.loadSize.coerceAtMost(20)
 

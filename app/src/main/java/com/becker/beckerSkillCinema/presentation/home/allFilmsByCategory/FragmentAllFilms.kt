@@ -76,6 +76,7 @@ class FragmentAllFilms :
                         progressGroupContainer.noAnswerText.isVisible = false
                     }
                 }
+
                 is LoadState.NotLoading -> {
                     binding.apply {
                         binding.allFilmsList.isVisible = true
@@ -83,6 +84,7 @@ class FragmentAllFilms :
                         progressGroupContainer.loadingRefreshBtn.isVisible = true
                     }
                 }
+
                 is LoadState.Error -> {
                     binding.apply {
                         binding.allFilmsList.isVisible = false

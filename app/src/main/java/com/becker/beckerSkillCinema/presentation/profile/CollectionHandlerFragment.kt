@@ -86,10 +86,13 @@ class CollectionHandlerFragment : BottomSheetDialogFragment() {
                                     when {
                                         responseCurrentFilm.ratingKinopoisk != null ->
                                             responseCurrentFilm.ratingKinopoisk.toString()
+
                                         responseCurrentFilm.ratingImdb != null ->
                                             responseCurrentFilm.ratingImdb.toString()
+
                                         responseCurrentFilm.ratingMpaa != null ->
                                             responseCurrentFilm.ratingMpaa
+
                                         else -> ""
                                     }
                                 binding.filmTitle.text =

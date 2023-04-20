@@ -13,6 +13,9 @@ import com.becker.beckerSkillCinema.data.network.networkEntities.similarFilm.Res
 import com.becker.beckerSkillCinema.data.network.networkEntities.staffByFilmId.ResponseStaffByFilmId
 import com.becker.beckerSkillCinema.data.network.networkEntities.staffById.ResponseStaffById
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT1
+import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT10
+import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT11
+import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT12
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT2
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT3
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT4
@@ -20,9 +23,6 @@ import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGH
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT6
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT7
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT8
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT10
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT11
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams.KINOPOISKACCESSRIGHT12
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path

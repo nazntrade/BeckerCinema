@@ -222,10 +222,10 @@
             app:launchSingleTop="true"
             app:popUpTo="@+id/fragmentFilmDetail"
             app:popUpToInclusive="true" />
-<!--to avoid add to backStack
-            app:launchSingleTop="true"
-            app:popUpTo="@+id/fragmentFilmDetail"
-            app:popUpToInclusive="true"    -->
+        <!--to avoid add to backStack
+                    app:launchSingleTop="true"
+                    app:popUpTo="@+id/fragmentFilmDetail"
+                    app:popUpToInclusive="true"    -->
     </fragment>
 
     <fragment

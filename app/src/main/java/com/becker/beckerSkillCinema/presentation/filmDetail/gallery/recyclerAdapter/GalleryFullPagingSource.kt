@@ -6,6 +6,8 @@ import com.becker.beckerSkillCinema.data.ParamsFilterGallery
 import com.becker.beckerSkillCinema.data.network.networkEntities.filmGallery.ItemImageGallery
 import com.becker.beckerSkillCinema.domain.network.GetGalleryByIdUseCase
 
+private const val FIRST_PAGE = 1
+
 class GalleryFullPagingSource(
     private val getGalleryByIdUseCase: GetGalleryByIdUseCase,
     private val filterParams: ParamsFilterGallery
@@ -32,9 +34,5 @@ class GalleryFullPagingSource(
                 LoadResult.Error(it)
             }
         )
-    }
-
-    private companion object {
-        private const val FIRST_PAGE = 1
     }
 }

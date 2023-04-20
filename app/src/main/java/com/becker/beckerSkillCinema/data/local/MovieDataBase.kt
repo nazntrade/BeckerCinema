@@ -15,6 +15,8 @@ import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Movie
 import com.becker.beckerSkillCinema.data.local.dataBaseEntities.ToWatch
 import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Watched
 
+const val DB_VERSION = 1
+
 @Database(
     entities = [
         Favorites::class,
@@ -23,7 +25,7 @@ import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Watched
         Movie::class,
         CustomCollection::class,
         Interesting::class],
-    version = MovieDataBase.DB_VERSION
+    version = DB_VERSION
 )
 abstract class MovieDataBase : RoomDatabase() {
     abstract fun movieDao(): MovieDao
@@ -32,8 +34,4 @@ abstract class MovieDataBase : RoomDatabase() {
     abstract fun watchedDao(): WatchedDao
     abstract fun customCollectionDao(): CustomCollectionDao
     abstract fun interestingDao(): InterestingDao
-
-    companion object {
-        const val DB_VERSION = 1
-    }
 }

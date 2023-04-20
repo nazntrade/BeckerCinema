@@ -12,6 +12,9 @@ import com.becker.beckerSkillCinema.databinding.ClearHistoryItemBinding
 import com.becker.beckerSkillCinema.databinding.ItemFilmBinding
 import com.bumptech.glide.Glide
 
+private const val ITEM_MOVIES = 0
+private const val ITEM_CLEAR_HISTORY = 1
+
 open class HistoryAdapter(
     val onInterestingItemClick: (Movie) -> Unit, val onClearInterestingClick: (View) -> Unit
 ) : ListAdapter<Movie, RecyclerView.ViewHolder>(DiffUtilCallBackWatched()) {
@@ -43,11 +46,6 @@ open class HistoryAdapter(
     override fun getItemViewType(position: Int): Int {
         return if (position == 10) ITEM_CLEAR_HISTORY
         else ITEM_MOVIES
-    }
-
-    companion object {
-        private const val ITEM_MOVIES = 0
-        private const val ITEM_CLEAR_HISTORY = 1
     }
 }
 

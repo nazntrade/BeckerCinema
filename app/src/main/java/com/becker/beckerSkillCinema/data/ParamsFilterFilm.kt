@@ -1,7 +1,7 @@
 package com.becker.beckerSkillCinema.data
 
 import com.becker.beckerSkillCinema.presentation.search.SearchSettingsFragment
-import java.util.*
+import java.util.Calendar
 
 data class ParamsFilterFilm(
     val countries: Map<Int, String> = emptyMap(),

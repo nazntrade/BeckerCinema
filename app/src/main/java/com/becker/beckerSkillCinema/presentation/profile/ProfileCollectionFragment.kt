@@ -11,8 +11,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.becker.beckerSkillCinema.R
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Movie
 import com.becker.beckerSkillCinema.data.Collections
+import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Movie
 import com.becker.beckerSkillCinema.databinding.FragmentCollectionProfileBinding
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.filmDetail.FilmDetailViewModel
@@ -90,6 +90,7 @@ class ProfileCollectionFragment : ViewBindingFragment<FragmentCollectionProfileB
                                 } else binding.collectionRecyclerView.isVisible = false
                             }
                         }
+
                         Collections.Custom -> {
                             binding.collectionTitle.text =
                                 profileMovieViewModel.customCollectionChosen.value?.collectionName
@@ -100,6 +101,7 @@ class ProfileCollectionFragment : ViewBindingFragment<FragmentCollectionProfileB
                                 } else binding.collectionRecyclerView.isVisible = false
                             }
                         }
+
                         Collections.ToWatch -> {
                             binding.collectionTitle.text = TO_WATCH
                             profileMovieViewModel.toWatchList.collectLatest {

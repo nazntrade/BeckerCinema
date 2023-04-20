@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 class DeleteCustomCollectionUseCase @Inject constructor(
     private val repositoryDataBase: RepositoryDataBase
-)  {
+) {
     suspend fun execute(collectionName: String) {
         return repositoryDataBase.deleteCustomCollection(collectionName)
     }

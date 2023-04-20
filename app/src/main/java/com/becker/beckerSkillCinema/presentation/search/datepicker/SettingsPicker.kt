@@ -1,6 +1,10 @@
 package com.becker.beckerSkillCinema.presentation.search.datepicker
 
-import android.graphics.*
+import android.graphics.Color
+import android.graphics.CornerPathEffect
+import android.graphics.Paint
+import android.graphics.Path
+import android.graphics.RectF
 
 class SettingsPicker {
 

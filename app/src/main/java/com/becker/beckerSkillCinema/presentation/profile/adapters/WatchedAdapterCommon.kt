@@ -13,6 +13,9 @@ import com.becker.beckerSkillCinema.databinding.ClearHistoryItemBinding
 import com.becker.beckerSkillCinema.databinding.ItemFilmBinding
 import com.bumptech.glide.Glide
 
+private const val ITEM_MOVIES = 0
+private const val ITEM_CLEAR_HISTORY = 1
+
 open class WatchedAdapterCommon(
     val onWatchedItemClick: (Movie) -> Unit,
     val onClearClick: (View) -> Unit
@@ -52,11 +55,6 @@ open class WatchedAdapterCommon(
     override fun getItemViewType(position: Int): Int {
         return if (position == 10) ITEM_CLEAR_HISTORY
         else ITEM_MOVIES
-    }
-
-    companion object {
-        private const val ITEM_MOVIES = 0
-        private const val ITEM_CLEAR_HISTORY = 1
     }
 }
 

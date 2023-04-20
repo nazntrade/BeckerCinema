@@ -2,7 +2,9 @@ package com.becker.beckerSkillCinema.presentation.home.allFilmsByCategory.allFil
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.becker.beckerSkillCinema.data.*
+import com.becker.beckerSkillCinema.data.CategoriesFilms
+import com.becker.beckerSkillCinema.data.ParamsFilterFilm
+import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
 import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
 import com.becker.beckerSkillCinema.domain.network.GetPremierFilmUseCase
 import com.becker.beckerSkillCinema.domain.network.GetTopFilmsUseCase
@@ -11,6 +13,8 @@ import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.GE
 import com.becker.beckerSkillCinema.presentation.home.HomeViewModel.Companion.GENRE_SCIENCE_FICTION_FILTER
 import com.becker.beckerSkillCinema.utils.ConstantsAndParams.TOP_TYPES
 
+private const val FIRST_PAGE = 1
+
 class AllFilmPagingSource(
     private val categoriesFilms: CategoriesFilms,
     private val year: Int,
@@ -18,28 +22,32 @@ class AllFilmPagingSource(
     private val getPremierFilmUseCase: GetPremierFilmUseCase,
     private val getTopFilmsUseCase: GetTopFilmsUseCase,
     private val getFilmListUseCase: GetFilmListUseCase
-) : PagingSource<Int, com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem>() {
-    override fun getRefreshKey(state: PagingState<Int, com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem>): Int = FIRST_PAGE
+) : PagingSource<Int, HomeItem>() {
+    override fun getRefreshKey(state: PagingState<Int, HomeItem>): Int =
+        FIRST_PAGE
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, HomeItem> {
         val page = params.key ?: FIRST_PAGE
         return kotlin.runCatching {
             when (categoriesFilms) {
                 CategoriesFilms.PREMIERS -> {
                     getPremierFilmUseCase.execute(year, month)
                 }
+
                 CategoriesFilms.POPULAR_100 -> {
                     getTopFilmsUseCase.execute(
                         topType = TOP_TYPES.getValue(CategoriesFilms.POPULAR_100),
                         page = page
                     )
                 }
+
                 CategoriesFilms.BEST_250 -> {
                     getTopFilmsUseCase.execute(
                         topType = TOP_TYPES.getValue(CategoriesFilms.BEST_250),
                         page = page
                     )
                 }
+
                 CategoriesFilms.TV_SERIES -> {
                     getFilmListUseCase.executeFilmsByFilter(
                         filters = ParamsFilterFilm(
@@ -49,12 +57,14 @@ class AllFilmPagingSource(
                         page = page
                     )
                 }
+
                 CategoriesFilms.MOST_AWAIT -> {
                     getTopFilmsUseCase.execute(
                         topType = TOP_TYPES.getValue(CategoriesFilms.MOST_AWAIT),
                         page = page
                     )
                 }
+
                 CategoriesFilms.BIOGRAPHY -> {
                     getFilmListUseCase.executeFilmsByFilter(
                         filters = ParamsFilterFilm(
@@ -65,6 +75,7 @@ class AllFilmPagingSource(
                         page = page
                     )
                 }
+
                 CategoriesFilms.SCIENCE_FICTION -> {
                     getFilmListUseCase.executeFilmsByFilter(
                         filters = ParamsFilterFilm(
@@ -75,6 +86,7 @@ class AllFilmPagingSource(
                         page = page
                     )
                 }
+
                 CategoriesFilms.CARTOONS -> {
                     getFilmListUseCase.executeFilmsByFilter(
                         filters = ParamsFilterFilm(
@@ -98,9 +110,5 @@ class AllFilmPagingSource(
                 LoadResult.Error(it)
             }
         )
-    }
-
-    private companion object {
-        private const val FIRST_PAGE = 1
     }
 }
