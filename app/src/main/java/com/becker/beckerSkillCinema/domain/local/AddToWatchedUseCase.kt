@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.domain.local
 
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Watched
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Watched
 import com.becker.beckerSkillCinema.data.repositories.RepositoryDataBase
 import javax.inject.Inject
 

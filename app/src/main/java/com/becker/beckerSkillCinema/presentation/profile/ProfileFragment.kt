@@ -16,8 +16,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.data.Collections
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.CustomCollection
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Movie
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.CustomCollection
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Movie
 import com.becker.beckerSkillCinema.databinding.FragmentProfileBinding
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.filmDetail.FilmDetailViewModel

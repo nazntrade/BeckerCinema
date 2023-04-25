@@ -2,7 +2,7 @@ package com.becker.beckerSkillCinema.presentation.filmDetail.staff.staffDetail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.becker.beckerSkillCinema.data.network.networkEntities.staffById.ResponseStaffById
+import com.becker.beckerSkillCinema.data.models.networkEntities.staffById.ResponseStaffById
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.domain.network.GetStaffByIdUseCase
 import com.becker.beckerSkillCinema.presentation.StateLoading

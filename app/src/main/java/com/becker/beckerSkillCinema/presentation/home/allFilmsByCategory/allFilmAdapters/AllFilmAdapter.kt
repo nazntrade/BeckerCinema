@@ -7,7 +7,7 @@ import androidx.core.view.isInvisible
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
 import com.becker.beckerSkillCinema.databinding.ItemFilmBinding
 import com.becker.beckerSkillCinema.utils.loadImage
 

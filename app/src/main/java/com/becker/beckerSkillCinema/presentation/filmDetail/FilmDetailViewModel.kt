@@ -10,11 +10,11 @@ import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.data.GalleryTypes
 import com.becker.beckerSkillCinema.data.ParamsFilterGallery
 import com.becker.beckerSkillCinema.data.Professions
-import com.becker.beckerSkillCinema.data.network.networkEntities.filmById.ResponseCurrentFilm
-import com.becker.beckerSkillCinema.data.network.networkEntities.filmGallery.ItemImageGallery
-import com.becker.beckerSkillCinema.data.network.networkEntities.seasons.Season
-import com.becker.beckerSkillCinema.data.network.networkEntities.similarFilm.SimilarItem
-import com.becker.beckerSkillCinema.data.network.networkEntities.staffByFilmId.ResponseStaffByFilmId
+import com.becker.beckerSkillCinema.data.models.networkEntities.filmById.ResponseCurrentFilm
+import com.becker.beckerSkillCinema.data.models.networkEntities.filmGallery.ItemImageGallery
+import com.becker.beckerSkillCinema.data.models.networkEntities.seasons.Season
+import com.becker.beckerSkillCinema.data.models.networkEntities.similarFilm.SimilarItem
+import com.becker.beckerSkillCinema.data.models.networkEntities.staffByFilmId.ResponseStaffByFilmId
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.domain.network.GetActorsListUseCase
 import com.becker.beckerSkillCinema.domain.network.GetFilmByIdUseCase

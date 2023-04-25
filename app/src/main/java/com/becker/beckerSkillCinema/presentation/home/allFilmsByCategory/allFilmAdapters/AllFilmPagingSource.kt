@@ -4,7 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.becker.beckerSkillCinema.data.CategoriesFilms
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
-import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
 import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
 import com.becker.beckerSkillCinema.domain.network.GetPremierFilmUseCase
 import com.becker.beckerSkillCinema.domain.network.GetTopFilmsUseCase

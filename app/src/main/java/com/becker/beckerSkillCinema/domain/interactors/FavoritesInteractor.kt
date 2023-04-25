@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.domain.interactors
 
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Favorites
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Favorites
 import com.becker.beckerSkillCinema.domain.local.AddToFavoritesUseCase
 import com.becker.beckerSkillCinema.domain.local.DeleteFromFavoritesUseCase
 import com.becker.beckerSkillCinema.domain.local.GetAllFavoritesUseCase

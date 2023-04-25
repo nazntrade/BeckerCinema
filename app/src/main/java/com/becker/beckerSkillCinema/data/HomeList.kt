@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.data
 
-import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
 
 data class HomeList(
     val category: CategoriesFilms,

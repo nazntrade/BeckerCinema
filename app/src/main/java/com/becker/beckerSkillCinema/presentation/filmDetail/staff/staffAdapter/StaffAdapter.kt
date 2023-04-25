@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.becker.beckerSkillCinema.R
-import com.becker.beckerSkillCinema.data.network.networkEntities.staffByFilmId.ResponseStaffByFilmId
+import com.becker.beckerSkillCinema.data.models.networkEntities.staffByFilmId.ResponseStaffByFilmId
 import com.becker.beckerSkillCinema.databinding.ItemStaffDetailFilmBinding
 import com.becker.beckerSkillCinema.utils.loadImage
 

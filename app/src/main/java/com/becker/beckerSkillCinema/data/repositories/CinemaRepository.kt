@@ -4,10 +4,10 @@ import com.becker.beckerSkillCinema.data.CategoriesFilms
 import com.becker.beckerSkillCinema.data.DataCentre
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
 import com.becker.beckerSkillCinema.data.network.Networking
-import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
-import com.becker.beckerSkillCinema.data.network.networkEntities.filmByFilter.ResponseByFilter
-import com.becker.beckerSkillCinema.data.network.networkEntities.filmByFilter.ResponseGenresCountries
-import com.becker.beckerSkillCinema.data.network.networkEntities.filmsPremier.FilmPremier
+import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.ResponseByFilter
+import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.ResponseGenresCountries
+import com.becker.beckerSkillCinema.data.models.networkEntities.filmsPremier.FilmPremier
 import javax.inject.Inject
 
 class CinemaRepository @Inject constructor() {

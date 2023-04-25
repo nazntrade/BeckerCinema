@@ -7,10 +7,10 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
 import com.becker.beckerSkillCinema.data.SearchParamsPeopleOrFilm
-import com.becker.beckerSkillCinema.data.network.networkEntities.HomeItem
-import com.becker.beckerSkillCinema.data.network.networkEntities.filmByFilter.FilterCountry
-import com.becker.beckerSkillCinema.data.network.networkEntities.filmByFilter.FilterGenre
-import com.becker.beckerSkillCinema.data.network.networkEntities.personFromSearch.PeopleFromSearch
+import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.FilterCountry
+import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.FilterGenre
+import com.becker.beckerSkillCinema.data.models.networkEntities.personFromSearch.PeopleFromSearch
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
 import com.becker.beckerSkillCinema.domain.network.GetGenresCountriesUseCase

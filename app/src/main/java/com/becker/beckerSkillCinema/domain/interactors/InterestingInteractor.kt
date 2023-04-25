@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.domain.interactors
 
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Interesting
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Interesting
 import com.becker.beckerSkillCinema.domain.local.AddMovieToInterestingUseCase
 import com.becker.beckerSkillCinema.domain.local.ClearInterestingUseCase
 import com.becker.beckerSkillCinema.domain.local.GetAllInterestingMoviesUseCase

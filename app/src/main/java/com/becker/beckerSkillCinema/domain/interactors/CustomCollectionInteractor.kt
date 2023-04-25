@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.domain.interactors
 
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.CustomCollection
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.CustomCollection
 import com.becker.beckerSkillCinema.domain.local.AddMovieToCustomCollectionUseCase
 import com.becker.beckerSkillCinema.domain.local.DeleteCustomCollectionUseCase
 import com.becker.beckerSkillCinema.domain.local.DeleteMovieFromCustomCollectionUseCase

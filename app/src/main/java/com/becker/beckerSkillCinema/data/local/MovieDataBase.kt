@@ -8,12 +8,12 @@ import com.becker.beckerSkillCinema.data.local.dao.InterestingDao
 import com.becker.beckerSkillCinema.data.local.dao.MovieDao
 import com.becker.beckerSkillCinema.data.local.dao.ToWatchDao
 import com.becker.beckerSkillCinema.data.local.dao.WatchedDao
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.CustomCollection
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Favorites
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Interesting
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Movie
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.ToWatch
-import com.becker.beckerSkillCinema.data.local.dataBaseEntities.Watched
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.CustomCollection
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Favorites
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Interesting
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Movie
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.ToWatch
+import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Watched
 
 const val DB_VERSION = 1
 
