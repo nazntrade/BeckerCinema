@@ -26,7 +26,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val getTopFilmsUseCase: GetTopFilmsUseCase,
     private val getPremierFilmUseCase: GetPremierFilmUseCase,
-    private val getFilmListUseCase: GetFilmListUseCase,
+    private val getFilmListUseCase: GetFilmListUseCase
 ) : ViewModel() {
 
     private val repository = CinemaRepository()

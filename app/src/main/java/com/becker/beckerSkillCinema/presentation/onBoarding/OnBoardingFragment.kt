@@ -1,18 +1,16 @@
 package com.becker.beckerSkillCinema.presentation.onBoarding
 
-import android.content.Context
 import android.os.Bundle
 import android.os.Environment
 import android.view.View
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.data.OnBoardingResources
 import com.becker.beckerSkillCinema.databinding.FragmentOnboardingBinding
-import com.becker.beckerSkillCinema.presentation.MainActivity
+import com.becker.beckerSkillCinema.presentation.MainViewModel
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment
 import com.becker.beckerSkillCinema.presentation.onBoarding.adapter.PagerAdapter
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams.FIRST_RUN
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams.SHARED_PREFS_NAME
 import com.becker.beckerSkillCinema.utils.autoCleared
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -20,6 +18,7 @@ class OnBoardingFragment :
     ViewBindingFragment<FragmentOnboardingBinding>(FragmentOnboardingBinding::inflate) {
 
     private var adapter: PagerAdapter by autoCleared()
+    private val viewModel: MainViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -51,14 +50,7 @@ class OnBoardingFragment :
 
     private fun onBoardingFinished() {
         if (Environment.getExternalStorageState() != Environment.MEDIA_MOUNTED) return
-        val sharedPref =
-            requireActivity().getSharedPreferences(
-                SHARED_PREFS_NAME,
-                Context.MODE_PRIVATE
-            )
-        val firstRunEditor = sharedPref.edit()
-        firstRunEditor.putBoolean(FIRST_RUN, false)
-        firstRunEditor.apply()
+        viewModel.finishFirstRun()
         findNavController().navigate(R.id.mainFragment)
     }
 }

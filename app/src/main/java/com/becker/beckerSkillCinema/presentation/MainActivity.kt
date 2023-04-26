@@ -1,20 +1,19 @@
 package com.becker.beckerSkillCinema.presentation
 
-import android.content.Context
 import android.os.Bundle
 import android.os.Environment
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.databinding.ActivityMainBinding
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams.FIRST_RUN
-import com.becker.beckerSkillCinema.utils.ConstantsAndParams.SHARED_PREFS_NAME
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,14 +29,9 @@ class MainActivity : AppCompatActivity() {
         val navHost =
             supportFragmentManager.findFragmentById(R.id.main_container) as NavHostFragment
         val navController = navHost.navController
-
         if (Environment.getExternalStorageState() != Environment.MEDIA_MOUNTED) return
-        val sharedPref = getSharedPreferences(
-            SHARED_PREFS_NAME,
-            Context.MODE_PRIVATE
-        )
-        val firstRun = sharedPref.getBoolean(FIRST_RUN, true)
-        if (firstRun) {
+        val isFirstRun  = viewModel.checkFirstRun()
+        if (isFirstRun) {
             navController.navigate(R.id.onBoardingFragment)
         } else {
             navController.navigate(R.id.mainFragment)
