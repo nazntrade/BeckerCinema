@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.becker.beckerSkillCinema.data.models.networkEntities.FilterCountryGenre
+import com.becker.beckerSkillCinema.data.models.uiModels.FilterCountryGenre
 import com.becker.beckerSkillCinema.databinding.ItemSearchFiltersBinding
 
 class CountryGenreSearchFiltersAdapter(

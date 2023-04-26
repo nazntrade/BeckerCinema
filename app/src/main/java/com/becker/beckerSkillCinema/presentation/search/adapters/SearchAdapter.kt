@@ -8,28 +8,28 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.becker.beckerSkillCinema.R
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.becker.beckerSkillCinema.databinding.ItemFilmSearchBinding
 import com.becker.beckerSkillCinema.utils.MyStrings
 import com.becker.beckerSkillCinema.utils.loadImage
 
 class SearchAdapter(
     private val onClick: (Int) -> Unit
-) : PagingDataAdapter<HomeItem, SearchAdapter.SearchViewHolder>(
+) : PagingDataAdapter<BasicUiMovieModel, SearchAdapter.SearchViewHolder>(
     SearchDiffUtil()
 ) {
 
     class SearchDiffUtil :
-        DiffUtil.ItemCallback<HomeItem>() {
+        DiffUtil.ItemCallback<BasicUiMovieModel>() {
         override fun areItemsTheSame(
-            oldItem: HomeItem,
-            newItem: HomeItem
+            oldItem: BasicUiMovieModel,
+            newItem: BasicUiMovieModel
         ) = oldItem.filmId == newItem.filmId
 
         @SuppressLint("DiffUtilEquals")
         override fun areContentsTheSame(
-            oldItem: HomeItem,
-            newItem: HomeItem
+            oldItem: BasicUiMovieModel,
+            newItem: BasicUiMovieModel
         ) = oldItem == newItem
     }
 

@@ -4,7 +4,7 @@ import com.becker.beckerSkillCinema.data.CategoriesFilms
 import com.becker.beckerSkillCinema.data.DataCentre
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
 import com.becker.beckerSkillCinema.data.network.Networking
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.ResponseByFilter
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.ResponseGenresCountries
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmsPremier.FilmPremier
@@ -13,7 +13,7 @@ import javax.inject.Inject
 class CinemaRepository @Inject constructor() {
 
     // FragmentHome
-    suspend fun getFilmsTop(topType: String, page: Int): List<HomeItem> {
+    suspend fun getFilmsTop(topType: String, page: Int): List<BasicUiMovieModel> {
         return Networking.kinopoiskApi.getFilmsTop(type = topType, page = page).films
     }
 

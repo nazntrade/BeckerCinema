@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.data.models.networkEntities.filmsTop
 
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.Country
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.Genre
 import com.squareup.moshi.Json
@@ -20,6 +20,6 @@ data class FilmTop(
     @Json(name = "ratingChange") val ratingChange: Any?,
     @Json(name = "ratingVoteCount") val ratingVoteCount: Int,
     @Json(name = "year") val year: String
-) : HomeItem {
+) : BasicUiMovieModel {
     override val yearHomeItem: String = year
 }

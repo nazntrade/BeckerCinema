@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter
 
-import com.becker.beckerSkillCinema.data.models.networkEntities.FilterCountryGenre
+import com.becker.beckerSkillCinema.data.models.uiModels.FilterCountryGenre
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

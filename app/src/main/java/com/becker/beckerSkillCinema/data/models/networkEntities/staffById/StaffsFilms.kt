@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.data.models.networkEntities.staffById
 
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.Genre
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -15,7 +15,7 @@ data class StaffsFilms(
     @Json(name = "description") val description: String?,
     @Json(name = "professionKey") val professionKey: String,
     override val yearHomeItem: String?
-) : HomeItem {
+) : BasicUiMovieModel {
     override val posterUrlPreview: String = ""
     override val genres: List<Genre> = emptyList()
 }

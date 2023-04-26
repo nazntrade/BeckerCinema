@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.data.models.networkEntities.filmsPremier
 
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.Country
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.Genre
 import com.squareup.moshi.Json
@@ -18,7 +18,7 @@ data class FilmPremier(
     @Json(name = "posterUrl") val posterUrl: String,
     @Json(name = "premiereRu") val premiereRu: String,
     @Json(name = "year") val year: Int
-) : HomeItem {
+) : BasicUiMovieModel {
     override val rating: String? = null
     override val yearHomeItem: String = year.toString()
 }

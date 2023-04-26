@@ -1,8 +1,8 @@
-package com.becker.beckerSkillCinema.data.models.networkEntities
+package com.becker.beckerSkillCinema.data.models.uiModels
 
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.Genre
 
-interface HomeItem {
+interface BasicUiMovieModel {
     val filmId: Int
     val posterUrlPreview: String
     val nameRu: String?

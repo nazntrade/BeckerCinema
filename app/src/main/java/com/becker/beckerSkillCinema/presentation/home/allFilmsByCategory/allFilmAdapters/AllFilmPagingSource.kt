@@ -4,7 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.becker.beckerSkillCinema.data.CategoriesFilms
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
 import com.becker.beckerSkillCinema.domain.network.GetPremierFilmUseCase
 import com.becker.beckerSkillCinema.domain.network.GetTopFilmsUseCase
@@ -22,11 +22,11 @@ class AllFilmPagingSource(
     private val getPremierFilmUseCase: GetPremierFilmUseCase,
     private val getTopFilmsUseCase: GetTopFilmsUseCase,
     private val getFilmListUseCase: GetFilmListUseCase
-) : PagingSource<Int, HomeItem>() {
-    override fun getRefreshKey(state: PagingState<Int, HomeItem>): Int =
+) : PagingSource<Int, BasicUiMovieModel>() {
+    override fun getRefreshKey(state: PagingState<Int, BasicUiMovieModel>): Int =
         FIRST_PAGE
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, HomeItem> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, BasicUiMovieModel> {
         val page = params.key ?: FIRST_PAGE
         return kotlin.runCatching {
             when (categoriesFilms) {

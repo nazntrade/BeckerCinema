@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter
 
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -19,7 +19,7 @@ data class FilmByFilter(
     @Json(name = "ratingKinopoisk") val ratingKinopoisk: Double?,
     @Json(name = "type") val type: String,
     @Json(name = "year") val year: Int?
-) : HomeItem {
+) : BasicUiMovieModel {
     override val nameRu: String? = nameRus ?: nameEn?.toString() ?: nameOriginal
     override val rating: String? = ratingKinopoisk?.toString()
     override val posterUrlPreview: String = posterPreview.ifEmpty { posterUrl }

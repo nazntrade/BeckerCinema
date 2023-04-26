@@ -7,27 +7,27 @@ import androidx.core.view.isInvisible
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.becker.beckerSkillCinema.databinding.ItemFilmBinding
 import com.becker.beckerSkillCinema.utils.loadImage
 
 class AllFilmAdapter(
     private val onClick: (Int) -> Unit
-) : PagingDataAdapter<HomeItem, AllFilmAdapter.AllFilmViewHolder>(
+) : PagingDataAdapter<BasicUiMovieModel, AllFilmAdapter.AllFilmViewHolder>(
     AllFilmsDiffUtil()
 ) {
 
     class AllFilmsDiffUtil :
-        DiffUtil.ItemCallback<HomeItem>() {
+        DiffUtil.ItemCallback<BasicUiMovieModel>() {
         override fun areItemsTheSame(
-            oldItem: HomeItem,
-            newItem: HomeItem
+            oldItem: BasicUiMovieModel,
+            newItem: BasicUiMovieModel
         ) = oldItem.filmId == newItem.filmId
 
         @SuppressLint("DiffUtilEquals")
         override fun areContentsTheSame(
-            oldItem: HomeItem,
-            newItem: HomeItem
+            oldItem: BasicUiMovieModel,
+            newItem: BasicUiMovieModel
         ) = oldItem == newItem
     }
 

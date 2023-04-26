@@ -4,7 +4,7 @@ import android.content.Context
 import android.graphics.RectF
 import android.widget.ImageView
 import com.becker.beckerSkillCinema.R
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmGallery.ItemImageGallery
 import com.becker.beckerSkillCinema.data.models.networkEntities.similarFilm.SimilarItem
 import com.becker.beckerSkillCinema.presentation.search.datepicker.Date
@@ -21,8 +21,8 @@ fun ImageView.loadImage(imageUrl: String) {
         .into(this)
 }
 
-fun List<HomeItem>.toLimitTheNumberOfObjects(size: Int): List<HomeItem> {
-    val resultList = mutableListOf<HomeItem>()
+fun List<BasicUiMovieModel>.toLimitTheNumberOfObjects(size: Int): List<BasicUiMovieModel> {
+    val resultList = mutableListOf<BasicUiMovieModel>()
     repeat(size) {
         resultList.add(this[it])
     }

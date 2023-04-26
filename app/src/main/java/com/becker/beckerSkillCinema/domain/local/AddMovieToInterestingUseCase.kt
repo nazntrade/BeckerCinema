@@ -1,13 +1,13 @@
 package com.becker.beckerSkillCinema.domain.local
 
 import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Interesting
-import com.becker.beckerSkillCinema.data.repositories.RepositoryDataBase
+import com.becker.beckerSkillCinema.data.repositories.DataBaseRepository
 import javax.inject.Inject
 
 class AddMovieToInterestingUseCase @Inject constructor(
-    private val repositoryDataBase: RepositoryDataBase
+    private val dataBaseRepository: DataBaseRepository
 ) {
     suspend fun execute(interesting: Interesting) {
-        return repositoryDataBase.addMovieToInteresting(interesting)
+        return dataBaseRepository.addMovieToInteresting(interesting)
     }
 }

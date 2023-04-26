@@ -15,7 +15,7 @@ import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Watched
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class RepositoryDataBase @Inject constructor(
+class DataBaseRepository @Inject constructor(
     private val toWatchDao: ToWatchDao,
     private val favoritesDao: FavoritesDao,
     private val watchedDao: WatchedDao,

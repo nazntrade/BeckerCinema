@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.data.models.networkEntities.similarFilm
 
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.Genre
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -15,7 +15,7 @@ data class SimilarItem(
     @Json(name = "posterUrlPreview") override val posterUrlPreview: String,
     @Json(name = "relationType") val relationType: String,
     override val yearHomeItem: String?
-) : HomeItem {
+) : BasicUiMovieModel {
     override val rating: String? = null
     override val genres: List<Genre> = emptyList()
 }

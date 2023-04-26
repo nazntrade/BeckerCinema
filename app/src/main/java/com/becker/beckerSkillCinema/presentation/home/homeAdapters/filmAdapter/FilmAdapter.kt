@@ -7,7 +7,7 @@ import androidx.core.view.isInvisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.Genre
 import com.becker.beckerSkillCinema.databinding.ItemFilmBinding
 import com.becker.beckerSkillCinema.utils.loadImage
@@ -22,15 +22,15 @@ class FilmAdapter(
     private val maxListSize: Int,
     private val clickNextButton: () -> Unit,
     private val clickFilms: (filmId: Int) -> Unit
-) : ListAdapter<HomeItem, FilmAdapter.FilmViewHolder>(FilmDiffUtilCallback()) {
+) : ListAdapter<BasicUiMovieModel, FilmAdapter.FilmViewHolder>(FilmDiffUtilCallback()) {
 
-    class FilmDiffUtilCallback : DiffUtil.ItemCallback<HomeItem>() {
-        override fun areItemsTheSame(oldItem: HomeItem, newItem: HomeItem): Boolean {
+    class FilmDiffUtilCallback : DiffUtil.ItemCallback<BasicUiMovieModel>() {
+        override fun areItemsTheSame(oldItem: BasicUiMovieModel, newItem: BasicUiMovieModel): Boolean {
             return oldItem.filmId == newItem.filmId
         }
 
         @SuppressLint("DiffUtilEquals")
-        override fun areContentsTheSame(oldItem: HomeItem, newItem: HomeItem): Boolean {
+        override fun areContentsTheSame(oldItem: BasicUiMovieModel, newItem: BasicUiMovieModel): Boolean {
             return oldItem == newItem
         }
     }
@@ -59,7 +59,7 @@ class FilmAdapter(
             binding.showAll.setOnClickListener { clickNextButton() }
         }
 
-        fun bindItem(item: HomeItem, clickFilms: (filmId: Int) -> Unit) {
+        fun bindItem(item: BasicUiMovieModel, clickFilms: (filmId: Int) -> Unit) {
             val poster = "https://kinopoiskapiunofficial.tech/images/posters/kp/${item.filmId}.jpg"
             binding.apply {
                 showAll.isInvisible = true

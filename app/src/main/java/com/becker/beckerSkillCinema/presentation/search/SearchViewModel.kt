@@ -7,7 +7,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
 import com.becker.beckerSkillCinema.data.SearchParamsPeopleOrFilm
-import com.becker.beckerSkillCinema.data.models.networkEntities.HomeItem
+import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.FilterCountry
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.FilterGenre
 import com.becker.beckerSkillCinema.data.models.networkEntities.personFromSearch.PeopleFromSearch
@@ -50,7 +50,7 @@ class SearchViewModel @Inject constructor(
     private val _genres = MutableStateFlow<List<FilterGenre>>(emptyList())
     val genres = _genres.asStateFlow()
 
-    private var _pagedFilms: Flow<PagingData<HomeItem>>? = null
+    private var _pagedFilms: Flow<PagingData<BasicUiMovieModel>>? = null
     val pagedFilms
         get() = _pagedFilms
 

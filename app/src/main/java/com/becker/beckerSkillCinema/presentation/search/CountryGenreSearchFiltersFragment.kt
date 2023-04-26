@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.becker.beckerSkillCinema.R
-import com.becker.beckerSkillCinema.data.models.networkEntities.FilterCountryGenre
+import com.becker.beckerSkillCinema.data.models.uiModels.FilterCountryGenre
 import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.FilterCountry
 import com.becker.beckerSkillCinema.databinding.FragmentSearchFiltersBinding
 import com.becker.beckerSkillCinema.presentation.ViewBindingFragment

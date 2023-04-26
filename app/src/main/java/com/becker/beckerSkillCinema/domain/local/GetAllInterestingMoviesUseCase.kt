@@ -1,14 +1,14 @@
 package com.becker.beckerSkillCinema.domain.local
 
 import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Interesting
-import com.becker.beckerSkillCinema.data.repositories.RepositoryDataBase
+import com.becker.beckerSkillCinema.data.repositories.DataBaseRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class GetAllInterestingMoviesUseCase @Inject constructor(
-    private val repositoryDataBase: RepositoryDataBase
+    private val dataBaseRepository: DataBaseRepository
 ) {
     fun execute(): Flow<List<Interesting>> {
-        return repositoryDataBase.getAllInterestingMovies()
+        return dataBaseRepository.getAllInterestingMovies()
     }
 }

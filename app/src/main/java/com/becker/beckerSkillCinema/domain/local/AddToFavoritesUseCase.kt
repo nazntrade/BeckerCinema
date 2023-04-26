@@ -1,13 +1,13 @@
 package com.becker.beckerSkillCinema.domain.local
 
 import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Favorites
-import com.becker.beckerSkillCinema.data.repositories.RepositoryDataBase
+import com.becker.beckerSkillCinema.data.repositories.DataBaseRepository
 import javax.inject.Inject
 
 class AddToFavoritesUseCase @Inject constructor(
-    private val repositoryDataBase: RepositoryDataBase
+    private val dataBaseRepository: DataBaseRepository
 ) {
     suspend fun execute(favorites: Favorites) {
-        return repositoryDataBase.addToFavorites(favorites)
+        return dataBaseRepository.addToFavorites(favorites)
     }
 }
