@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
-import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.Genre
+import com.becker.beckerSkillCinema.data.models.networkModels.filmByFilter.Genre
 import com.becker.beckerSkillCinema.databinding.ItemFilmBinding
 import com.becker.beckerSkillCinema.utils.loadImage
 

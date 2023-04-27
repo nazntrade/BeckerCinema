@@ -6,7 +6,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.becker.beckerSkillCinema.R
-import com.becker.beckerSkillCinema.data.models.networkEntities.filmGallery.ItemImageGallery
+import com.becker.beckerSkillCinema.data.models.networkModels.filmGallery.ItemImageGallery
 import com.becker.beckerSkillCinema.databinding.ItemGalleryFullscreenBinding
 import com.becker.beckerSkillCinema.presentation.filmDetail.gallery.recyclerAdapter.GalleryFullAdapter
 

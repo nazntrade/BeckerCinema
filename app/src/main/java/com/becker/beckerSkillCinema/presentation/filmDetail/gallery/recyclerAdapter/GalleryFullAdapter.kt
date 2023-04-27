@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.becker.beckerSkillCinema.data.models.networkEntities.filmGallery.ItemImageGallery
+import com.becker.beckerSkillCinema.data.models.networkModels.filmGallery.ItemImageGallery
 import com.becker.beckerSkillCinema.databinding.ItemGalleryImageBinding
 import com.becker.beckerSkillCinema.utils.loadImage
 

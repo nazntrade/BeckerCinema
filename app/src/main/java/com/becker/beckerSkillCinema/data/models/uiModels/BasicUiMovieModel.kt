@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.data.models.uiModels
 
-import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.Genre
+import com.becker.beckerSkillCinema.data.models.networkModels.filmByFilter.Genre
 
 interface BasicUiMovieModel {
     val filmId: Int

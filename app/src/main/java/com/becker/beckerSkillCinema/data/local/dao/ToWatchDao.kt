@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.becker.beckerSkillCinema.data.models.dataBaseEntities.ToWatch
+import com.becker.beckerSkillCinema.data.models.localModels.ToWatch
 import kotlinx.coroutines.flow.Flow
 
 @Dao

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.becker.beckerSkillCinema.data.models.dataBaseEntities.CustomCollection
+import com.becker.beckerSkillCinema.data.models.localModels.CustomCollection
 import com.becker.beckerSkillCinema.databinding.CustomCollectionInProfileBinding
 
 open class CustomCollectionAdapter(

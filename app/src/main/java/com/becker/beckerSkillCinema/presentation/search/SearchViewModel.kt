@@ -8,9 +8,9 @@ import androidx.paging.PagingData
 import com.becker.beckerSkillCinema.data.ParamsFilterFilm
 import com.becker.beckerSkillCinema.data.SearchParamsPeopleOrFilm
 import com.becker.beckerSkillCinema.data.models.uiModels.BasicUiMovieModel
-import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.FilterCountry
-import com.becker.beckerSkillCinema.data.models.networkEntities.filmByFilter.FilterGenre
-import com.becker.beckerSkillCinema.data.models.networkEntities.personFromSearch.PeopleFromSearch
+import com.becker.beckerSkillCinema.data.models.networkModels.filmByFilter.FilterCountry
+import com.becker.beckerSkillCinema.data.models.networkModels.filmByFilter.FilterGenre
+import com.becker.beckerSkillCinema.data.models.networkModels.personFromSearch.PeopleFromSearch
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.domain.network.GetFilmListUseCase
 import com.becker.beckerSkillCinema.domain.network.GetGenresCountriesUseCase
@@ -31,10 +31,9 @@ import javax.inject.Inject
 class SearchViewModel @Inject constructor(
     private val getFilmListUseCase: GetFilmListUseCase,
     private val getGenresCountriesUseCase: GetGenresCountriesUseCase,
-    private val getPeopleFromSearchUseCase: GetPeopleFromSearchUseCase
+    private val getPeopleFromSearchUseCase: GetPeopleFromSearchUseCase,
+    private val repository: CinemaRepository
 ) : ViewModel() {
-
-    private val repository = CinemaRepository()
 
     private var filters =
         ParamsFilterFilm(order = SearchSettingsFragment.Companion.Order.NUM_VOTE.text)

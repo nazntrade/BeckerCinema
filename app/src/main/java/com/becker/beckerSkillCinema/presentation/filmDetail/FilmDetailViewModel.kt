@@ -10,11 +10,11 @@ import com.becker.beckerSkillCinema.R
 import com.becker.beckerSkillCinema.data.GalleryTypes
 import com.becker.beckerSkillCinema.data.ParamsFilterGallery
 import com.becker.beckerSkillCinema.data.Professions
-import com.becker.beckerSkillCinema.data.models.networkEntities.filmById.ResponseCurrentFilm
-import com.becker.beckerSkillCinema.data.models.networkEntities.filmGallery.ItemImageGallery
-import com.becker.beckerSkillCinema.data.models.networkEntities.seasons.Season
-import com.becker.beckerSkillCinema.data.models.networkEntities.similarFilm.SimilarItem
-import com.becker.beckerSkillCinema.data.models.networkEntities.staffByFilmId.ResponseStaffByFilmId
+import com.becker.beckerSkillCinema.data.models.networkModels.filmById.ResponseCurrentFilm
+import com.becker.beckerSkillCinema.data.models.networkModels.filmGallery.ItemImageGallery
+import com.becker.beckerSkillCinema.data.models.networkModels.seasons.Season
+import com.becker.beckerSkillCinema.data.models.networkModels.similarFilm.SimilarItem
+import com.becker.beckerSkillCinema.data.models.networkModels.staffByFilmId.ResponseStaffByFilmId
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.domain.network.GetActorsListUseCase
 import com.becker.beckerSkillCinema.domain.network.GetFilmByIdUseCase
@@ -43,9 +43,8 @@ class FilmDetailViewModel @Inject constructor(
     private val getGalleryByIdUseCase: GetGalleryByIdUseCase,
     private val getSimilarFilmsUseCase: GetSimilarFilmsUseCase,
     private val getSeasonsUseCase: GetSeasonsUseCase,
+    private val repository: CinemaRepository
 ) : ViewModel() {
-
-    private val repository = CinemaRepository()
 
     private var _currentFilmId: Int? = null
     val currentFilmId

@@ -26,10 +26,9 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val getTopFilmsUseCase: GetTopFilmsUseCase,
     private val getPremierFilmUseCase: GetPremierFilmUseCase,
-    private val getFilmListUseCase: GetFilmListUseCase
+    private val getFilmListUseCase: GetFilmListUseCase,
+    private val repository: CinemaRepository
 ) : ViewModel() {
-
-    private val repository = CinemaRepository()
 
     private val currentMonth: String = Month.of(calendar.get(Calendar.MONTH) + 1).name
     private val currentYear: Int = calendar.get(Calendar.YEAR)

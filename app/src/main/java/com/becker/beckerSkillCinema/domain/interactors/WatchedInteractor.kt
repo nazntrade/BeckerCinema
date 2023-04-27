@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.domain.interactors
 
-import com.becker.beckerSkillCinema.data.models.dataBaseEntities.Watched
+import com.becker.beckerSkillCinema.data.models.localModels.Watched
 import com.becker.beckerSkillCinema.domain.local.AddToWatchedUseCase
 import com.becker.beckerSkillCinema.domain.local.ClearWatchedUseCase
 import com.becker.beckerSkillCinema.domain.local.DeleteFromWatchedUseCase

@@ -27,9 +27,8 @@ class AllFilmsViewModel @Inject constructor(
     private val getTopFilmsUseCase: GetTopFilmsUseCase,
     private val getPremierFilmUseCase: GetPremierFilmUseCase,
     private val getFilmListUseCase: GetFilmListUseCase,
+    private val repository: CinemaRepository
 ) : ViewModel() {
-
-    private val repository = CinemaRepository()
 
     private var _localCategory: CategoriesFilms? = null
     val localCategory

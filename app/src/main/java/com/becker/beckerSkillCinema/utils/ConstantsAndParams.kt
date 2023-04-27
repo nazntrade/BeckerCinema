@@ -5,7 +5,6 @@ import com.becker.beckerSkillCinema.data.TopTypesForApiQuery
 
 object ConstantsAndParams {
 
-    const val BASE_URL = "https://kinopoiskapiunofficial.tech/api/"
     const val SHARED_PREFS_NAME = "onBoardingFirstRun"
     const val FIRST_RUN = "FirstRun"
     const val KINOPOISKACCESSRIGHT1 = "70e0059c-0587-4549-9cbf-8a9c5c4143f6"

@@ -2,7 +2,7 @@ package com.becker.beckerSkillCinema.presentation.filmDetail.staff.staffDetail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.becker.beckerSkillCinema.data.models.networkEntities.staffById.ResponseStaffById
+import com.becker.beckerSkillCinema.data.models.networkModels.staffById.ResponseStaffById
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import com.becker.beckerSkillCinema.domain.network.GetStaffByIdUseCase
 import com.becker.beckerSkillCinema.presentation.StateLoading
@@ -15,10 +15,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class StaffDetailViewModel @Inject constructor(
-    private val getStaffByIdUseCase: GetStaffByIdUseCase
+    private val getStaffByIdUseCase: GetStaffByIdUseCase,
+    private val repository: CinemaRepository
 ) : ViewModel() {
-
-    private val repository = CinemaRepository()
 
     private val _currentStaff = MutableStateFlow<ResponseStaffById?>(null)
     val currentStaff = _currentStaff.asStateFlow()

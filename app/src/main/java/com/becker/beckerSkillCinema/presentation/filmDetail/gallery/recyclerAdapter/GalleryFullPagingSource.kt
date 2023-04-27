@@ -3,7 +3,7 @@ package com.becker.beckerSkillCinema.presentation.filmDetail.gallery.recyclerAda
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.becker.beckerSkillCinema.data.ParamsFilterGallery
-import com.becker.beckerSkillCinema.data.models.networkEntities.filmGallery.ItemImageGallery
+import com.becker.beckerSkillCinema.data.models.networkModels.filmGallery.ItemImageGallery
 import com.becker.beckerSkillCinema.domain.network.GetGalleryByIdUseCase
 
 private const val FIRST_PAGE = 1

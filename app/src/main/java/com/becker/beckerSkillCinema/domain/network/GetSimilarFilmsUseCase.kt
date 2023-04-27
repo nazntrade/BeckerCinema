@@ -1,6 +1,6 @@
 package com.becker.beckerSkillCinema.domain.network
 
-import com.becker.beckerSkillCinema.data.models.networkEntities.similarFilm.ResponseSimilarFilms
+import com.becker.beckerSkillCinema.data.models.networkModels.similarFilm.ResponseSimilarFilms
 import com.becker.beckerSkillCinema.data.repositories.CinemaRepository
 import javax.inject.Inject
 
