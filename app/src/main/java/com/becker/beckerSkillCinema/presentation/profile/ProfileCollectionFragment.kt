@@ -81,7 +81,7 @@ class ProfileCollectionFragment : ViewBindingFragment<FragmentCollectionProfileB
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 profileMovieViewModel.chosenCollection.collectLatest { collections ->
                     when (collections) {
-                        Collections.Favorites -> {
+                        Collections.FAVORITES -> {
                             binding.collectionTitle.text = FAVORITES
                             profileMovieViewModel.favoritesList.collectLatest {
                                 if (it.isNotEmpty()) {
@@ -91,7 +91,7 @@ class ProfileCollectionFragment : ViewBindingFragment<FragmentCollectionProfileB
                             }
                         }
 
-                        Collections.Custom -> {
+                        Collections.CUSTOM -> {
                             binding.collectionTitle.text =
                                 profileMovieViewModel.customCollectionChosen.value?.collectionName
                             profileMovieViewModel.customCollectionList.collectLatest {
@@ -102,7 +102,7 @@ class ProfileCollectionFragment : ViewBindingFragment<FragmentCollectionProfileB
                             }
                         }
 
-                        Collections.ToWatch -> {
+                        Collections.TO_WATCH -> {
                             binding.collectionTitle.text = TO_WATCH
                             profileMovieViewModel.toWatchList.collectLatest {
                                 if (it.isNotEmpty()) {

@@ -94,7 +94,7 @@ class FilmDetailViewModel @Inject constructor(
                 setSimilar()
                 _loadingCurrentFilmState.value = StateLoading.Success
             } catch (e: Throwable) {
-                _loadingCurrentFilmState.value = StateLoading.Error(e.message.toString())
+//                _loadingCurrentFilmState.value = StateLoading.Error(e.message.toString())
                 Timber.e("getFilmById $e")
             }
         }

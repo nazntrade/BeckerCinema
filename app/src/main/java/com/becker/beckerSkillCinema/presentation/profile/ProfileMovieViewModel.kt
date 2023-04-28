@@ -78,7 +78,7 @@ class ProfileMovieViewModel @Inject constructor(
     private val _customCollectionList = MutableStateFlow<List<Movie>>(emptyList())
     val customCollectionList = _customCollectionList.asStateFlow()
 
-    private val _chosenCollection = MutableStateFlow<Collections>(Collections.Favorites)
+    private val _chosenCollection = MutableStateFlow(Collections.FAVORITES)
     val chosenCollection = _chosenCollection.asStateFlow()
 
     private val _customCollectionChosen = MutableStateFlow<CustomCollection?>(null)

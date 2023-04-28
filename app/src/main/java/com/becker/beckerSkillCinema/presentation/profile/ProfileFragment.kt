@@ -177,7 +177,7 @@ class ProfileFragment : ViewBindingFragment<FragmentProfileBinding>(
             }
         }
         binding.toWatchCollection.setOnClickListener {
-            profileMovieViewModel.chooseCollection(Collections.ToWatch)
+            profileMovieViewModel.chooseCollection(Collections.TO_WATCH)
             findNavController().navigate(R.id.action_navigation_profile_to_profileCollectionFragment)
         }
     }
@@ -191,7 +191,7 @@ class ProfileFragment : ViewBindingFragment<FragmentProfileBinding>(
             }
         }
         binding.favoritsCollection.setOnClickListener {
-            profileMovieViewModel.chooseCollection(Collections.Favorites)
+            profileMovieViewModel.chooseCollection(Collections.FAVORITES)
             findNavController().navigate(R.id.action_navigation_profile_to_profileCollectionFragment)
         }
     }
@@ -249,7 +249,7 @@ class ProfileFragment : ViewBindingFragment<FragmentProfileBinding>(
 
     private fun onCollectionItemClick(customCollection: CustomCollection) {
         profileMovieViewModel.onCustomCollectionClick(customCollection)
-        profileMovieViewModel.chooseCollection(Collections.Custom)
+        profileMovieViewModel.chooseCollection(Collections.CUSTOM)
         findNavController().navigate(R.id.action_navigation_profile_to_profileCollectionFragment)
     }
 
