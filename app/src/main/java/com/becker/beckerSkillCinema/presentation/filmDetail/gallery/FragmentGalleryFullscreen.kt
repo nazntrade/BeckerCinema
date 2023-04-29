@@ -53,7 +53,7 @@ class FragmentGalleryFullscreen : ViewBindingFragment<FragmentGalleryDetailFulls
         binding.galleryImageFullscreenContainer.adapter = adapter
 
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.galleryByType.collect {
+            viewModel.getGalleryByType().collect {
                 adapter.submitData(it)
             }
         }

@@ -168,7 +168,7 @@ class FilmDetailViewModel @Inject constructor(
     val numberOfPicturesByCategory =
         _numberOfPicturesByCategory.asStateFlow()  //it keeps countImagesByCategory for screenDetailImage
 
-    val galleryByType: Flow<PagingData<ItemImageGallery>> = Pager(
+    fun getGalleryByType(): Flow<PagingData<ItemImageGallery>> = Pager(
         config = PagingConfig(pageSize = 20),
         pagingSourceFactory = {
             GalleryFullPagingSource(

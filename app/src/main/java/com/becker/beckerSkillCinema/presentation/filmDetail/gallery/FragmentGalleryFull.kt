@@ -119,7 +119,7 @@ class FragmentGalleryFull : ViewBindingFragment<FragmentFilmGalleryScreenBinding
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.updateParamsFilterGallery(galleryType = galleryType)
-                viewModel.galleryByType.collect {
+                viewModel.getGalleryByType().collect {
                     galleryAdapter.submitData(it)
                 }
             }
